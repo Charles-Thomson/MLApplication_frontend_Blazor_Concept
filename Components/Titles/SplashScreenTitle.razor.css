@@ -1,0 +1,115 @@
+﻿/*Title Text Styling*/
+
+.title-text__text-style {
+    font-family: 'Segoe UI', Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 80px;
+    font-weight: 200;
+    color: black;
+    width: 100%;
+    height: 100%;
+    letter-spacing: 10px;
+}
+
+/*Main Title Text*/
+
+.title-text__main-text-container {
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    white-space: nowrap;
+}
+
+.title-text__main-text-animation {
+    animation: mainTextAnimation 1000ms linear forwards;
+}
+
+@keyframes mainTextAnimation {
+
+    100% {
+        transform: translateY(-240%);
+        color: transparent;
+    }
+}
+
+/*Shadow Text*/
+
+.title-text__text-style-shadow-text {
+    font-family: 'Segoe UI', Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 80px;
+    font-weight: 200;
+    color: black;
+    width: 100%;
+    height: 100%;
+    letter-spacing: 10px;
+    background-image: linear-gradient( 0deg, grey 20%, rgba(255,255,255, 0.9) 60%, rgba(255,255,255, 0.9) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+
+.title-text__shadow-text-container {
+    text-align: center;
+    position: fixed;
+    top: 57%;
+    left: 50%;
+    transform: translate(-50%,-50%) rotateX(180deg);
+    width: 100%;
+    white-space: nowrap;
+}
+
+
+.title-text__shadow-text-animation {
+    animation: shadowTextAnimation 500ms linear forwards;
+}
+
+@keyframes shadowTextAnimation {
+    10% {
+        background-image: linear-gradient( 0deg, grey 20%, white 60%, white 100%);
+        transform: translateY(-5%);
+    }
+
+    20% {
+        background-image: linear-gradient( 0deg, grey 20%, white 55%, white 100%);
+        transform: translateY(-10%);
+    }
+
+    30% {
+        background-image: linear-gradient( 0deg, grey 20%, white 50%, white 100%);
+        transform: translateY(-15%);
+    }
+
+
+    40% {
+        background-image: linear-gradient( 0deg, grey 20%, white 45%, white 100%);
+        transform: translateY(-20%);
+    }
+
+    60% {
+        background-image: linear-gradient( 0deg, grey 10%, white 40%, white 100%);
+        transform: translateY(-25%);
+    }
+
+    70% {
+        background-image: linear-gradient( 0deg, grey 10%, white 35%, white 100%);
+        transform: translateY(-30%);
+    }
+
+    80% {
+        background-image: linear-gradient( 0deg, grey 10%, white 30%, white 100%);
+        transform: translateY(-35%);
+    }
+
+    90% {
+        background-image: linear-gradient( 0deg, grey 10%, white 25%, white 100%);
+        transform: translateY(-40%);
+    }
+
+    100% {
+        background-image: linear-gradient( 0deg, white, white);
+        transform: translateY(-45%);
+    }
+}

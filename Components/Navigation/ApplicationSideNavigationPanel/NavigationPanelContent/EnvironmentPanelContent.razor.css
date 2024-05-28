@@ -1,0 +1,28 @@
+﻿label {
+    font-family: 'Segoe UI', Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 600;
+}
+
+
+
+.environment-parameter-panel__title {
+    color: black;
+    padding: 10px;
+    position: relative;
+    font-weight: bold;
+    font-size: 1.5em;
+    font-family: 'Segoe UI', Verdana, Geneva, Tahoma, sans-serif;
+    z-index: 2;
+    max-height: 5%;
+    top: 0;
+    left: 15%;
+}
+
+.form-element {
+    padding: 5%;
+}
+
+.form-elemnt__dropdown {
+    width: 80%;
+    background-color: whitesmoke;
+}

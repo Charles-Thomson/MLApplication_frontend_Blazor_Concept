@@ -1,0 +1,99 @@
+﻿@inject InstanceAttributeStateContainer stateContainer
+@inject ILogger<ApplicationNavigationPanel> Logger
+<div class="hyper-parameter_base-container">
+<div class="hyper-parameter-panel__title">
+    HYPER PARAMETERS
+</div>
+
+<div class="form-element ">
+    <label for="InstanceName" >Instance Name</label>
+    <InputText style="width: 60%;" @bind-Value="@stateContainer.InstanceName" id="InstanceName" />
+</div>
+
+<div class="form-element ">
+    <label for="NumberOfGenerations">Number of Generations</label>
+    <InputText style="width: 60%;" @bind-Value=@stateContainer.NumberOfGenerations id="NumGenerations" />
+</div>
+
+<div class="form-element ">
+    <label for="AgentsPerGeneration">Agents per Generation</label>
+    <InputText style="width: 60%;" @bind-Value=@stateContainer.AgentsPerGeneration id="AgentsPerGeneration" />
+</div>
+
+<div class="form-element ">
+    <label >Starting fitness threshold</label>
+    <InputText style="width: 60%;" @bind-Value=@stateContainer.StartingFitnessThreshold id="FitnessThresholdGain" />
+</div>
+
+<div class="form-element ">
+    <label>Start new generation Threhold</label>
+    <InputText style="width: 60%;" @bind-Value=@stateContainer.StartNewGenerationThreshold />
+</div>
+
+<div class="form-element ">
+    <label>Generation Failure Threshold</label>
+    <InputText style="width: 60%;" @bind-Value=@stateContainer.GenerationFailureThreshold />
+</div>
+
+<div class="form-element ">
+    <label>Maximum action Count</label>
+    <InputText style="width: 60%;" @bind-Value=@stateContainer.EnvironmentMaxActionCount />
+</div>
+
+
+
+<div class="form-element">
+    <label for="HiddenLayerWeightInit">HiddenLayerWeightInit</label>
+<select class="form-element-drop-down" @bind=@stateContainer.HiddenLayerWeightInit id="HiddenLayerWeightInit">
+    @foreach (var item in @HiddenLayerWeightInit)
+    {
+        <option value="@item">@item</option>
+    }
+    </select>
+</div>
+
+<div class="form-element">
+    <label for="OutputLayerWeightInit">OutputLayerWeightInit</label>
+<select @bind=@stateContainer.OutputLayerWeightInit id="OutputLayerWeightInit">
+        @foreach (var item in @OutputLayerWeightInit)
+        {
+            <option value="@item">@item</option>
+        }
+    </select>
+</div>
+
+<div class="form-element">
+    <label for="OutputLayerActivationFunction">OutputLayerActivationFunction</label>
+    <select class="form-element-drop-down" @bind=@stateContainer.OutputLayerActivationFunction id="OutputLayerActivationFunction">
+        @foreach (var item in @OutputLayerActivationFunction)
+        {
+            <option value="@item">@item</option>
+        }
+    </select>
+</div>
+
+<div class="form-element">
+    <label for="HiddenLayerActivationFunction">HiddenLayerActivationFunction</label>
+        <select class="form-element-drop-down" @bind=@stateContainer.HiddenLayerActivationFunction id="HiddenLayerActivationFunction">
+        @foreach (var item in @HiddenLayerActivationFunction)
+        {
+            <option value="@item">@item</option>
+        }
+    </select>
+
+        
+</div>
+
+<div class="form-element">
+    <label >New Generation Creation Function</label>
+    <select class="form-element-drop-down" @bind=@stateContainer.NewGenerationCreationFunction id="HiddenLayerActivationFunction">
+        @foreach (var item in @NewGenerationCreationFunctions)
+        {
+            <option value="@item">@item</option>
+        }
+    </select>
+
+
+</div>
+</div>
+        

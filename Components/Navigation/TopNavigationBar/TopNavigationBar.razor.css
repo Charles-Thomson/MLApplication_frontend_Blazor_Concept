@@ -1,0 +1,38 @@
+﻿
+.top-navigation-bar__body {
+    height:100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f0f0f0;
+}
+
+.top-navigation-bar__title {
+    font-size: 1.2em;
+    font-weight: bold;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    width: 20%;
+    
+}
+
+.top-navigation-bar__buttons {
+    display: flex;
+    width: 80%;
+    justify-content: space-evenly;
+}
+
+.top-navigation-bar__buttons button {
+        
+    padding-right:10%;
+    border: none;
+    font-size: 1em;
+    border-right: 2px ridge white ;
+        
+        
+}
+.top-navigation-bar__buttons button:last-child {
+    border-right: none; /* Remove right border from the last button */
+}

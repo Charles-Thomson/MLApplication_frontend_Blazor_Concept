@@ -1,0 +1,29 @@
+﻿.home-page-title__container {
+    text-align: center;
+    position: fixed;
+    top: 8%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    white-space: nowrap;
+}
+
+.home-page-subheading__container {
+    text-align: center;
+    position: fixed;
+    top: 13%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    white-space: nowrap;
+}
+
+.home-page-navigation-grid__container {
+    position: fixed;
+    top: 55%;
+    left: 50%;
+    width: 75%;
+    height: 75%;
+    transform: translate(-50%, -50%);
+}
+

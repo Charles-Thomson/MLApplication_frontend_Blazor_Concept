@@ -1,0 +1,44 @@
+﻿@inherits  LayoutComponentBase
+
+<div class="sharedLayout_base">
+       
+    <header>
+        <div class="header_container">
+            @if (@Content_NavigtionBar != null)
+            {
+                <div class="sharedLayout_header-navigation-bar">
+                    @Content_NavigtionBar
+                </div>
+            }
+        </div>
+    </header>
+        
+
+    <div class="sharedLayout_content-wrapper">
+
+        @if (@Content_LeftPanel != null)
+        {
+            <aside class="sharedLayout_sidebar-left">
+                @Content_LeftPanel
+            </aside>
+        }
+
+        <main class="sharedLayout_main-content">
+            @Content_Main
+        </main>
+
+        @if (@Content_RightPanel != null)
+        {
+            <aside class="sharedLayout_sidebar-right">
+                @Content_RightPanel
+            </aside>
+        }
+    </div>
+
+    @if (@Content_Footer != null)
+    {
+        <footer>
+            @Content_Footer
+        </footer>
+    }
+</div>

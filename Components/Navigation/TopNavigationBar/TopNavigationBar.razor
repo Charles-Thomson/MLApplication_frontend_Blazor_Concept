@@ -1,0 +1,12 @@
+﻿@using MLApplication_frontend.Components.Titles
+
+<div class="top-navigation-bar__body">
+    <div class="top-navigation-bar__title" @onclick = "@(() => NavigateTo("/home_page"))">
+        <TopNavBarTitle TitleText="Machine Learning"></TopNavBarTitle>
+    </div>
+    <div class="top-navigation-bar__buttons">
+        <button @onclick="@(() => NavigateTo("/generational_learning_introduction_page"))" >Introducation</button>
+        <button @onclick="@(() => NavigateTo("/generational_learning_application_page"))">Application</button>
+        <button @onclick="@(() => NavigateTo("/generational_learning_results_page"))">Results</button>
+    </div>
+</div>

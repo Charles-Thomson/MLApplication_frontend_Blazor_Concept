@@ -1,0 +1,7 @@
+﻿<div class="navigation-grid__layout">
+    @foreach (NavigationItemData item in NavigationItems)
+    {
+        <NavigationGridItem GridItemTitle=@item.Title GridItemBodyText=@item.BodyText ElementColor=@item.ElementColor GridItemNavigatesTo="@item.NavigatesTo" />
+    }
+
+</div>

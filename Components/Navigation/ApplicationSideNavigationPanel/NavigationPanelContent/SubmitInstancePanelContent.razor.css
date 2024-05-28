@@ -1,0 +1,36 @@
+﻿.settings-pannel__main-title {
+    color: black;
+    padding: 10px;
+    position: relative;
+    font-weight: bold;
+    font-size: 1em;
+    font-family: 'Segoe UI', Verdana, Geneva, Tahoma, sans-serif;
+    z-index: 2;
+    max-height: 5%;
+    top: 0;
+    left: 15%;
+}
+
+
+.settings-pannel__secondary-title {
+    position: relative;
+    font-family: 'Segoe UI', Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 800;
+    padding: 8px;
+    text-align: center;
+    width: 80%;
+}
+
+.settings-pannel__element {
+    padding: 4px;
+}
+
+.settings-pannel__element-label {
+    font-family: 'Segoe UI', Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 600;
+}
+
+.settings-pannel__element-data {
+    font-family: 'Segoe UI', Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 300;
+}

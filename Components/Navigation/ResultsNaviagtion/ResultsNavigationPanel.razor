@@ -1,0 +1,39 @@
+﻿@using MLApplication_frontend.Components.Navigation.ResultsNaviagtion
+@inject ILogger<ResultsNavigationPanel> Logger
+@inject InstanceAttributeStateContainer stateContainer
+
+<div class="side-navigation-panel__container">
+
+    <div class="side-navigation-panel__button-group-container">
+        <ResultsNavigationButtonGroup ChangeVisablePanelContent="@ChangeVisablePanelContent" />
+    </div>
+
+    <div class="side-navigation-panel__content-container">
+
+        <div class="side-navigation-panel__sub-headding">Select Instance</div>
+
+        <div class="nvaigation-menu__element-padding">
+            <select @bind="@SelectedInstanceID" class="page_element__dropdown">
+                @foreach (string ID in @InstanceIDS)
+                {
+                    <option value="@ID">@ID</option>
+                }
+            </select>
+        </div>
+
+        <div class="nvaigation-menu__element-padding">
+            <button class="faded-label-button" @onclick="@ToggleInstanceInformationVisibility">Show Instance Information</button>
+        </div>
+
+        <div class="instance-information__expandable" style="@InsatnceInformationVisibleStyle">
+            <div>Instance ID: @CurrentInstanceData.InstanceId</div>
+            <div>Number of generations: @CurrentInstanceData.NumberOfSuccessfulGenerations</div>
+            <div>Fitness Progression By Generation</div>
+            <button class="faded-label-button" @onclick="@PlotGenerationAverageFitness">Show </button>
+        </div>
+
+        <div class="side-navigation-panel__panel-content">
+            @VisablePanelContent.PanelContent
+        </div>
+    </div>
+</div>

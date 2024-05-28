@@ -1,0 +1,7 @@
+﻿.navigation-grid__layout {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 10%;
+    column-gap: 5%;
+    height: 100%;
+}

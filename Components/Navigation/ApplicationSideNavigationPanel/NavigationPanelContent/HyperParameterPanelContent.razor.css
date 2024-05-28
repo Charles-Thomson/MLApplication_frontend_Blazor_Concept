@@ -1,0 +1,54 @@
+﻿label {
+    display: block;
+    width: 80%;
+    font-family: 'Segoe UI', Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 600;
+
+    background: linear-gradient(to left, #f69ec4, #f9dd94 100%);
+    background-position: 0 100%;
+    background-size: 100% 2px;
+    background-repeat: repeat-x;
+}
+
+select {
+    width: 60%;
+    
+}
+
+.hyper-parameter_base-container {
+    height: 80vh;
+}
+
+.hyper-parameter-panel__title {
+    color: black;
+    font-weight: bold;
+    font-size: 1.2em;
+    font-family: 'Segoe UI', Verdana, Geneva, Tahoma, sans-serif;
+    z-index: 2;
+    max-height: 5%;
+    padding-top: 10px;
+    text-align: center;
+}
+
+.form-element {
+    padding: 5%;
+}
+
+.hyper-parameter-panel__button {
+    position: relative;
+    
+    left: 35%;
+    background-color: transparent;
+    border-radius: 10px;
+    border-color: transparent;
+    -webkit-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    font-family: 'Segoe UI', Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 600;
+}
+
+    .form-element__button:hover {
+        background-color: whitesmoke;
+    }

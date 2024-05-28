@@ -1,0 +1,49 @@
+﻿@page "/generational_learning_application_page"
+@using MLApplication_frontend.Components.Navigation.ApplicationSideNavigationPanel
+@using MLApplication_frontend.Components.Navigation.TopNavigationBar
+@using MLApplication_frontend.Components.Environment
+@using MLApplication_frontend.Layout
+@inject InstanceAttributeStateContainer stateContainer
+
+
+
+
+@* <TopNavigationBar />
+
+<div class="side-navigation-panel__conatiner">
+    <ApplicationNavigationPanel UpdateEnvironmentDimension_X_CallBack="@UpdateEnvironmentDimension_X" UpdateEnvironmentDimension_Y_CallBack="@UpdateEnvironmentDimension_Y"/>
+</div>
+
+<div class="enviornment__container">
+    <CascadingValue name="CurrentEnvironmentDimension_X" Value="@CurrentEnvironemntDimension_X">
+        <CascadingValue name="CurrentEnvironmentDimension_Y" Value="@CurrentEnvironemntDimension_Y">
+            <ConstructedEnvironment/>
+        </CascadingValue>
+    </CascadingValue>
+</div> *@
+
+<GenerationalLearning_ApplicationLayout >
+    <Content_NavigtionBar>
+        <TopNavigationBar></TopNavigationBar>
+    </Content_NavigtionBar>
+
+    <Content_LeftPanel>
+        <ApplicationNavigationPanel UpdateEnvironmentDimension_X_CallBack="@UpdateEnvironmentDimension_X" UpdateEnvironmentDimension_Y_CallBack="@UpdateEnvironmentDimension_Y" />
+    </Content_LeftPanel>
+
+    <Content_Main>
+        <CascadingValue name="CurrentEnvironmentDimension_X" Value="@CurrentEnvironemntDimension_X">
+            <CascadingValue name="CurrentEnvironmentDimension_Y" Value="@CurrentEnvironemntDimension_Y">
+                <ConstructedEnvironment />
+            </CascadingValue>
+        </CascadingValue>
+
+    </Content_Main>
+
+</GenerationalLearning_ApplicationLayout>
+
+
+
+
+
+

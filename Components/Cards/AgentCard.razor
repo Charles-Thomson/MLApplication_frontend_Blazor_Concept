@@ -1,0 +1,40 @@
+﻿<div class="element_group_padding">
+    <div class="page_element">
+        <div class="panel__sub-headding">
+           Agent ID: @agentData?.agentID</div>
+        </div>
+    <div class="page_element">
+         <label>Fitness: @agentData?.agentFitness</label>
+    </div>
+
+    <div class="page_element">
+        <label>Total Actions: </label>
+    </div>
+</div>
+
+<div class="element_group_padding">
+    <div class="page_element">
+        <label>Agent Path</label>
+        <button @onclick="@HandleShowCurrentlySelectedAgentPath" class="faded-label-button">Show</button>
+    </div>
+
+    <div class="page_element">
+        <label>Fitness Progression</label>
+        <button @onclick="@HandleShowCurrentlySelectedAgentFitnessByStep" class="faded-label-button">Show</button>
+    </div>
+</div>
+
+<div class="element_group_padding">
+    <div class="page_element">
+        <div class="panel__sub-headding">Raw Agent Data</div>
+    </div>
+    <div class="page_element">
+        <label>Path: </label>
+        <div>@agentData?.agentPath</div> 
+    </div>
+
+    <div class="page_element">
+        <label>Fitness By Step: </label>
+        <div>@agentData?.fitnessByStep</div>
+    </div>
+</div>

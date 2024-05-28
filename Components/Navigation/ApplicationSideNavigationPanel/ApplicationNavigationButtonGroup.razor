@@ -1,0 +1,30 @@
+﻿@using MLApplication_frontend.Components.Buttons
+@inject ILogger<ApplicationNavigationButtonGroup> Logger
+
+
+<div class="button-group_container">
+    <div class="button-group_element">
+        <CascadingValue name="ButtonData" Value="@ButtonDataInstances.Find(instance => instance.ButtonID == "HyperParameterSettings")">
+            <SideNavigationButton UpdatedSelectedButtons="@UpdateButtonState" />
+        </CascadingValue>
+    </div>
+    <div class="button-group_element">
+        <CascadingValue name="ButtonData" Value="@ButtonDataInstances.Find(instance => instance.ButtonID == "EnvironmentSettings")">
+            <SideNavigationButton UpdatedSelectedButtons="@UpdateButtonState" />
+        </CascadingValue>
+    </div>
+    <div class="button-group_element">
+        <CascadingValue name="ButtonData" Value="@ButtonDataInstances.Find(instance => instance.ButtonID == "InstanceInformation")">
+            <SideNavigationButton UpdatedSelectedButtons="@UpdateButtonState" />
+        </CascadingValue>
+    </div>
+    <div class="button-group_element">
+        <CascadingValue name="ButtonData" Value="@ButtonDataInstances.Find(instance => instance.ButtonID == "SubmitInstance")">
+            <SideNavigationButton UpdatedSelectedButtons="@UpdateButtonState" />
+        </CascadingValue>
+    </div>
+</div>
+
+
+
+

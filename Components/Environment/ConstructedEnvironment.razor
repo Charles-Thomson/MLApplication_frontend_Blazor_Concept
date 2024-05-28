@@ -1,0 +1,18 @@
+﻿@inject ILogger<ConstructedEnvironment> Logger
+@inject InstanceAttributeStateContainer stateContainer
+
+
+<div class="environment__container ">
+    <div style="grid-template-columns: repeat(@CurrentEnvironemntDimension_X, 1fr);grid-template-rows: repeat(@CurrentEnvironemntDimension_Y, 1fr);" class="environment__layout">
+        @foreach (var elm in @EnvioronmentNodeList)
+        {
+            <div class="environment-maze-node" style="background-color: @elm.BackgroundColor;" id="@elm.Index" @onclick="@(() => @elm.inc(@SelectionValue))"> @elm.Index</div>
+        }
+    </div>
+    <div class="environment-button-block">
+        <EnvironmentButtonBlock UpdateNodeStateSelectionValue="@ChangeSelectionValue"></EnvironmentButtonBlock>
+    </div>
+</div>
+
+
+

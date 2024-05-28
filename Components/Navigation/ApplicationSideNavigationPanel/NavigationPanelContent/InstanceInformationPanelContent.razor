@@ -1,0 +1,77 @@
+﻿@inject InstanceAttributeStateContainer stateContainer
+@inject ILogger<ApplicationNavigationPanel> Logger
+
+
+<div class="settings-pannel__main-title">Instance Data</div>
+
+<div class="settings-pannel__secondary-title">Hyper Parameters</div>
+
+<div class="settings-pannel__element">
+    <label class="settings-pannel__element-label"> Instance Name</Label>
+    <div class="settings-pannel__element-data">@stateContainer.InstanceName</div>
+</div>
+
+<div class="settings-pannel__element">
+    <label class="settings-pannel__element-label"> Number of Generations</Label>
+    <div class="settings-pannel__element-data">@stateContainer.NumberOfGenerations</div>
+</div>
+
+<div class="settings-pannel__element">
+    <label class="settings-pannel__element-label"> Agents per Generation</Label>
+    <div class="settings-pannel__element-data">@stateContainer.AgentsPerGeneration</div>
+</div>
+
+<div class="settings-pannel__element">
+    <label class="settings-pannel__element-label"> Fitness Threshold</Label>
+    <div class="settings-pannel__element-data">@stateContainer.StartingFitnessThreshold</div>
+</div>
+
+
+<div class="settings-pannel__secondary-title">Weight Initialization</div>
+
+<div class="settings-pannel__element">
+    <label class="settings-pannel__element-label"> Hidden Layer</Label>
+    <div class="settings-pannel__element-data">@stateContainer.HiddenLayerWeightInit</div>
+</div>
+
+<div class="settings-pannel__element">
+    <label class="settings-pannel__element-label"> Output Layer</Label>
+    <div class="settings-pannel__element-data">@stateContainer.OutputLayerWeightInit</div>
+</div>
+
+<div class="settings-pannel__secondary-title">Activation Functions</div>
+
+<div class="settings-pannel__element">
+    <label class="settings-pannel__element-label">Hidden Layer</Label>
+    <div class="settings-pannel__element-data">@stateContainer.HiddenLayerActivationFunction</div>
+</div>
+
+<div class="settings-pannel__element">
+    <label class="settings-pannel__element-label">Output Layer</Label>
+    <div class="settings-pannel__element-data">@stateContainer.OutputLayerActivationFunction</div>
+</div>
+
+<div class="settings-pannel__secondary-title">Raw Environment data</div>
+
+    <div class="settings-pannel__element">
+
+    <label class="settings-pannel__element-label">Environment Dimension X</Label>
+    <div class="settings-pannel__element-data">@stateContainer.EnvironmentDimension_X</div>
+
+    <label class="settings-pannel__element-label">Environment Dimension X</Label>
+    <div class="settings-pannel__element-data">@stateContainer.EnvironmentDimension_Y</div>
+
+    <label class="settings-pannel__element-label">Environment Data</Label>
+    <div class="settings-pannel__element-data">
+        @foreach (int value in @stateContainer.EnvironmentNodeStateData)
+        {
+            @value 
+            
+        }
+    </div>
+    
+    
+</div>
+
+
+        

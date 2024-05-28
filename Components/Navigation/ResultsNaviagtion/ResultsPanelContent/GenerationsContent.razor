@@ -1,0 +1,37 @@
+﻿<div class="side-navigation-panel__sub-headding">Generations</div>
+
+<div class="page_element">
+    <label for="instance-ids">Generations</label>
+
+    <select @bind="@selectedGenerationID" class="page_element__dropdown" id="instance-ids">
+        @foreach (var ID in @GenereationIDs)
+        {
+            <option value="@ID">@ID</option>
+        }
+    </select>
+</div>
+
+<div class="element_group_padding">
+    <div class="page_element">
+        <div class="panel__sub-headding">@GenerationData.generationId</div>
+    </div>
+    <div class="page_element">
+        <label>Total Number of agents: @GenerationData.numberOfAgents</label>
+    </div>
+
+    <div class="page_element">
+        <label>Average Fitness: @GenerationData.generationAverageFitness</label>
+    </div>
+
+    <div class="page_element">
+        <label>All Fitness:  @GenerationData.allAgentsFitnessResults</label>
+    </div>
+</div>
+
+<div class="element_group_padding">
+    <div class="page_element">
+        <label>Generation Fitness Progression</label>
+        <button @onclick="@HandleShowGenerationAllAgentsFitnessProgression" class="faded-label-button">Show</button>
+    </div>
+</div>
+

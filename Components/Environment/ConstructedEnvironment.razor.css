@@ -1,0 +1,36 @@
+﻿
+.environment__container {
+    background-color: transparent;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+.environment__layout {
+    display: grid;
+    gap: 0.5%;
+    height: 90%;
+    border: solid;
+    border-color: black;
+}
+
+.environment-maze-node {
+    background: rgba(255, 255, 255, 0.57);
+    border-radius: 4px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4.7px);
+    -webkit-backdrop-filter: blur(4.7px);
+    border: 1px solid rgba(255, 255, 255, 0.69);
+    text-align: center;
+}
+
+.environment-button-block {
+    
+    width: 100%;
+    background-color: transparent;
+    height: 8%;
+}

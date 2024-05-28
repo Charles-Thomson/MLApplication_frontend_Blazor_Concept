@@ -1,0 +1,35 @@
+﻿@using MLApplication_frontend.Components.Cards
+
+
+<div class="side-navigation-panel__sub-headding">All Agents</div>
+
+<div class="page_element">
+    <label for="instance-ids">Select a generation</label>
+
+    <select @bind="@selectedGenerationID" class="page_element__dropdown" id="instance-ids">
+        @foreach (var ID in @GenereationIDs)
+        {
+            <option value="@ID">@ID</option>
+        }
+    </select>
+</div>
+
+<div class="page_element">
+    <label for="instance-ids">Select Agent</label>
+
+    <select @bind="@selectedAgentID" class="page_element__dropdown" id="instance-ids">
+        @foreach (var ID in @AgentIDs)
+        {
+            <option value="@ID">@ID</option>
+        }
+    </select>
+</div>
+
+<div class="side-navigation-panel__agent-card-container">
+    <CascadingValue name="agentData" Value="@CurrentlySelectedAgent">
+        <AgentCard ShowCurrentlySelectedAgentPath="@PlotCurrentlySelectedAgentPath" ShowCurrentlySelectedAgentFitnessByStep="@PlotCurrentlySelectedAgentFitnessProgression" />
+    </CascadingValue>
+</div>
+
+
+

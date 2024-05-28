@@ -1,0 +1,9 @@
+﻿@inject ILogger<NavigationGridItem> Logger
+
+<div class="navigation-item__container" @onclick="@HandleOnClick">
+    <div class="navigation-item__link">
+        <div class="navigation-item__title">@GridItemTitle</div>
+        <div class="navigation-item__body-text">@GridItemBodyText</div>
+        <div class="navigation-item__background" style="background-color: @ElementColor"></div>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+﻿@page "/"
+@using MLApplication_frontend.Components.Buttons
+@using MLApplication_frontend.Components.Titles
+@using Serilog
+@inject ILogger<SplashScreen> Logger
+
+
+<div class="splash-screen__title-container">
+    <SplashScreenTitle TitleText="MACHINE LEARNING" StartAnimationsFlag="@StartAnimationsFlag" />
+</div>
+
+<div class="splash-screen__button-container">
+    <SplashScreenButton StartAnimationsFlag="@StartAnimationsFlag" OnButtonPressed="@OnSplashScreenButtonPresssed" />
+</div>
+

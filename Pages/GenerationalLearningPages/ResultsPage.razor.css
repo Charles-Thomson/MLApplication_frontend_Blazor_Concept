@@ -1,0 +1,25 @@
+﻿.results-page__side-navigation-conatiner {
+    position: relative;
+    width: 15%;
+    float: left;
+    height: 100%;
+}
+
+.results-page__graph-content-container {
+    position: relative;
+    width: 85%;
+    float: right;
+    height: 100%;  
+    padding: 2%;
+}
+
+
+.results-page__page-content-container {
+    position: absolute;
+    top: 7vh;
+    height: 93vh;
+    width: 100%;
+    left: 0px;
+    margin: 0px;
+    justify-content: center;
+}
