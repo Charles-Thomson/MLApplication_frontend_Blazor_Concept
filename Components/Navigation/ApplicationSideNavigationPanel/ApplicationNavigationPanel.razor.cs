@@ -9,11 +9,8 @@ namespace MLApplication_frontend.Components.Navigation.ApplicationSideNavigation
     public partial class ApplicationNavigationPanel
     {
         
-        
-
         [Parameter]
         public EventCallback<string> UpdateEnvironmentDimension_X_CallBack { get; set; }
-
         [Parameter]
         public EventCallback<string> UpdateEnvironmentDimension_Y_CallBack { get; set; }
 
@@ -29,6 +26,12 @@ namespace MLApplication_frontend.Components.Navigation.ApplicationSideNavigation
             new PanelData("HyperParameterSettings", builder =>
                 {
                     builder.OpenComponent(0, typeof(HyperParameterPanelContent));
+                    builder.CloseComponent();
+                }),
+
+            new PanelData("NeuralNetworkSettings", builder =>
+                {
+                    builder.OpenComponent(0, typeof(NeuralNetworkPanelContent));
                     builder.CloseComponent();
                 }),
 

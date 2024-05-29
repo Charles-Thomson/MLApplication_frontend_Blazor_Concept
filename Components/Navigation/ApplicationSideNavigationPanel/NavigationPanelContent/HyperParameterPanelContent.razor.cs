@@ -7,8 +7,10 @@ using System.Linq;
 using System.Threading.Tasks;
 
 
+
 namespace MLApplication_frontend.Components.Navigation.ApplicationSideNavigationPanel.NavigationPanelContent
 {
+    
     public partial class HyperParameterPanelContent
     {
        

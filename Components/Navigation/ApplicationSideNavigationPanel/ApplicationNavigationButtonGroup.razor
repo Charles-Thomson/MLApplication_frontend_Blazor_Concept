@@ -9,6 +9,11 @@
         </CascadingValue>
     </div>
     <div class="button-group_element">
+        <CascadingValue name="ButtonData" Value="@ButtonDataInstances.Find(instance => instance.ButtonID == "NeuralNetworkSettings")">
+            <SideNavigationButton UpdatedSelectedButtons="@UpdateButtonState" />
+        </CascadingValue>
+    </div>
+    <div class="button-group_element">
         <CascadingValue name="ButtonData" Value="@ButtonDataInstances.Find(instance => instance.ButtonID == "EnvironmentSettings")">
             <SideNavigationButton UpdatedSelectedButtons="@UpdateButtonState" />
         </CascadingValue>

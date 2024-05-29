@@ -1,38 +1,82 @@
-﻿
+﻿label {
+    font-family: 'Segoe UI', Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 4px;
+}
 
-.settings-pannel__main-title {
+.side-navigation-panel__title {
+    width: 100%;
     color: black;
     padding: 10px;
+    border-bottom: 1px ridge whitesmoke;
     position: relative;
     font-weight: bold;
-    font-size: 1.5em;
+    font-size: 1em;
     font-family: 'Segoe UI', Verdana, Geneva, Tahoma, sans-serif;
     z-index: 2;
     max-height: 5%;
     top: 0;
-    left: 15%;
-}
-
-
-.settings-pannel__secondary-title {
-    position: relative;
-    font-family: 'Segoe UI', Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: 800;
-    padding: 8px;
     text-align: center;
+}
+
+
+.side-navigation-panel__sub-headding {
     width: 80%;
-}
-
-.settings-pannel__element {
-    padding: 4px;
-}
-
-.settings-pannel__element-label {
+    color: black;
+    padding: 10px;
+    border-bottom: 1px ridge whitesmoke;
+    position: relative;
+    font-weight: bold;
+    font-size: 0.8em;
     font-family: 'Segoe UI', Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: 600;
+    z-index: 2;
+    max-height: 5%;
+    top: 0;
+    text-align: center;
+    left: 10%;
 }
 
-.settings-pannel__element-data {
+.side-navigation-panel__content-container {
+    max-height: 100%;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 2px;
+    align-content: center;
+    
+    overflow-x: auto;
+}
+
+
+::-webkit-scrollbar {
+    width: 1px;
+}
+
+::-webkit-scrollbar-track {
+    background: white; /* Color of the scrollbar track */
+}
+
+::-webkit-scrollbar-thumb {
+    background: whitesmoke; /* Color of the scrollbar thumb */
+    border-radius: 5px; /* Radius of the scrollbar thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Color of the scrollbar thumb on hover */
+}
+
+
+.page_element {
+    
+    padding: 1% 5%;
+}
+
+.page_element__element-data {
+    width: 100%;
+    overflow-x: auto; /* Enable vertical scrolling */
     font-family: 'Segoe UI', Verdana, Geneva, Tahoma, sans-serif;
     font-weight: 300;
+    padding: 0px 5px;
+    white-space: pre-wrap;
 }

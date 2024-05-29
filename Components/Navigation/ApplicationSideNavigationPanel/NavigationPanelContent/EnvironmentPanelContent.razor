@@ -1,12 +1,17 @@
 ﻿@inject InstanceAttributeStateContainer stateContainer
 @inject ILogger<ApplicationNavigationPanel> Logger
 
+<div class="side-navigation-panel__content-container">
 
-    <div class="environment-parameter-panel__title">Maze Size</div>
+    <div class="side-navigation-panel__title">Maze Size</div>
 
-    <div class="form-element">
+
+    <div class="side-navigation-panel__sub-headding">Environment Dimensions</div>
+
+    <div class="page_element">
     <label for="environment-dimension-X">Environment dimension X</label>
-    <select @bind="@EnvironmentDimension_X" class="form-elemnt__dropdown" id="environment-dimension-X">
+
+    <select @bind="@EnvironmentDimension_X" class="page_element__dropdown" id="environment-dimension-X">
         @foreach (var dimension in AvailableEnvironmentDimensions)
             {
             <option value="@dimension">@dimension</option>
@@ -15,9 +20,10 @@
 
     </div>
 
-    <div class="form-element">
+    <div class="page_element">
     <label for="environment-dimension-Y">Environment dimension Y</label>
-    <select @bind="@EnvironmentDimension_Y" class="form-elemnt__dropdown" id="environment-dimension-Y">
+
+    <select @bind="@EnvironmentDimension_Y" class="page_element__dropdown" id="environment-dimension-Y">
         @foreach (var dimension in AvailableEnvironmentDimensions)
             {
             <option value="@dimension">@dimension</option>
@@ -26,7 +32,10 @@
 
     </div>
 
+    <div class="side-navigation-panel__sub-headding">Node Selection</div>
+
+</div>
 
 
-@stateContainer.EnvironmentDimension_Y
-@stateContainer.EnvironmentDimension_X
+
+

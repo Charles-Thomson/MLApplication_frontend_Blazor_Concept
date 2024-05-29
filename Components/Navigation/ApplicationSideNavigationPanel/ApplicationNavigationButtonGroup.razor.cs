@@ -19,6 +19,7 @@ namespace MLApplication_frontend.Components.Navigation.ApplicationSideNavigation
         public List<ButtonDataClass> ButtonDataInstances = new List<ButtonDataClass>
         {
             new("HyperParameterSettings", SVGFile.HyperParameterSettingsSVG),
+            new("NeuralNetworkSettings", SVGFile.NeuralNetworkSVG),
             new("EnvironmentSettings", SVGFile.EnvironmentSettingsSVG),
             new("InstanceInformation", SVGFile.InstanceInformationSVG),
             new("SubmitInstance", SVGFile.SubmitInstanceSVG)

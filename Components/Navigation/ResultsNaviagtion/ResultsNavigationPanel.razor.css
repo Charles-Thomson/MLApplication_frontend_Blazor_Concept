@@ -44,7 +44,7 @@
 }
 
 .side-navigation-panel__panel-content {
-    z-index: 2;
+    z-index: 1;
     overflow-x: hidden;
     overflow-y: auto;
 }

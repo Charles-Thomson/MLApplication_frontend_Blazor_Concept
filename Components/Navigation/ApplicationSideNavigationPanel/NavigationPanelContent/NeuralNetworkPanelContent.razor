@@ -1,0 +1,75 @@
+﻿@inject InstanceAttributeStateContainer stateContainer
+@inject NeuralNetworkAttributes NeuralNetworkAttributes
+@inject ILogger<NeuralNetworkPanelContent> Logger
+
+<div class="side-navigation-panel__content-container">
+
+    <div class="side-navigation-panel__title">Neural Network </div>
+
+    <div class="page_element">
+        <label> Use Default Settings</Label>
+        <input type="checkbox" @bind="@UsingDefaults" />
+    </div>
+
+    <div class="side-navigation-panel__sub-headding">Weight Intialization </div>
+
+    <div class="page_element">
+        <label for="HiddenLayerWeightInit">Hidden Layer</label>
+        <select class="page_element__dropdown" @bind=@stateContainer.HiddenLayerWeightInit id="HiddenLayerWeightInit" disabled="@UsingDefaults">
+            @foreach (var item in @NeuralNetworkAttributes.HiddenLayerWeightInit_KVP)
+            {
+                <option value="@item.Key">@item.Value</option>
+            }
+        </select>
+    </div>
+
+    <div class="page_element">
+        <label  for="OutputLayerWeightInit">Output Layer</label>
+        <select class="page_element__dropdown" @bind=@stateContainer.OutputLayerWeightInit id="OutputLayerWeightInit" disabled="@UsingDefaults">
+            @foreach (var item in @NeuralNetworkAttributes.OutputLayerWeightInit_KVP)
+            {
+                <option value="@item.Key">@item.Value</option>
+            }
+        </select>
+    </div>
+
+    <div class="side-navigation-panel__sub-headding">Activation Functions </div>
+
+    <div class="page_element">
+        <label for="OutputLayerActivationFunction">Output Layer</label>
+        <select class="page_element__dropdown" @bind=@stateContainer.OutputLayerActivationFunction id="OutputLayerActivationFunction" disabled="@UsingDefaults">
+            @foreach (var item in @NeuralNetworkAttributes.OutputLayerActivationFunction_KVP)
+            {
+                <option value="@item.Key">@item.Value</option>
+            }
+        </select>
+    </div>
+
+    <div class="page_element">
+        <label for="HiddenLayerActivationFunction">Hidden Layer</label>
+        <select class="page_element__dropdown" @bind=@stateContainer.HiddenLayerActivationFunction id="HiddenLayerActivationFunction" disabled="@UsingDefaults">
+            @foreach (var item in @NeuralNetworkAttributes.HiddenLayerActivationFunction_KVP)
+            {
+                <option value="@item.Key">@item.Value</option>
+            }
+        </select>
+    </div>
+
+
+
+    <div class="side-navigation-panel__sub-headding">Generation Creation </div>
+
+    <div class="page_element">
+        <label>New Generation Creation Function</label>
+        <select class="page_element__dropdown" @bind=@stateContainer.NewGenerationCreationFunction id="HiddenLayerActivationFunction" disabled="@UsingDefaults">
+            @foreach (var item in @NeuralNetworkAttributes.NewGenerationCreationFunctions_KVP)
+            {
+                <option value="@item.Key">@item.Value</option>
+            }
+        </select>
+    </div>
+    <div class="side-navigation-panel__sub-headding">Layers </div>
+
+
+</div>
+

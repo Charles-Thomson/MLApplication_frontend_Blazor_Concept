@@ -1,19 +1,4 @@
-﻿label {
-    font-family: 'Segoe UI', Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: 600;
-}
-
-.side-navigation-panel__content-container {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    gap: 5px;
-    align-content: center;
-}
-
-.side-navigation-panel__title {
+﻿.side-navigation-panel__title {
     width: 100%;
     color: black;
     padding: 10px;
@@ -43,6 +28,7 @@
     top: 0;
     text-align: center;
     left: 10%;
+    
 }
 
 .page_element {
@@ -52,5 +38,37 @@
 .page_element__dropdown {
     width: 100%;
     background-color: whitesmoke;
+}
+
+
+label {
+    font-family: 'Segoe UI', Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 4px;
+}
+
+select {
+    width: 80%;
+}
+
+.side-navigation-panel__content-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 5px;
+    
+    align-content: center;
+}
+
+.side-navigation-panel__sub-section-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex:1; 
+    flex-direction: column;
+    gap: 10px;
 }
 

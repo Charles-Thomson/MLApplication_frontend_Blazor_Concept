@@ -6,6 +6,7 @@ using Serilog.Extensions.Logging;
 using System.Diagnostics;
 using Microsoft.JSInterop;
 using System.Net.Http;
+using MLApplication_frontend.Components.Navigation.ApplicationSideNavigationPanel.NavigationPanelContent;
 
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
@@ -22,6 +23,7 @@ Log.Logger = new LoggerConfiguration()
 Log.Information("**SYSTEM** :  Loging Started");
 
 builder.Services.AddSingleton<InstanceAttributeStateContainer>();
+builder.Services.AddSingleton<NeuralNetworkAttributes>();
 
 builder.Services.AddLogging(loggingBuilder => loggingBuilder.AddSerilog());
 await builder.Build().RunAsync();

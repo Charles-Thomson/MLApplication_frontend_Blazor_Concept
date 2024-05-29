@@ -4,9 +4,11 @@ namespace MLApplication_frontend.Components.Buttons
 {
     public class NavigationButtonSVGs
     {
-        public string HyperParameterSettingsSVG_String = "<svg width=\"30\" height=\"30\" fill=\"@ButtonData?.ButtonColor\" class=\"bi bi-gear\" viewBox=\"0 0 20 20\">\r\n        <path d=\"M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492M5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0\" />\r\n        <path d=\"M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115z\" />\r\n    </svg>";
+        public string HyperParameterSettingsSVG_String = "<svg width=\"30\" height=\"30\" fill=\"@ButtonData?.ButtonColor\" class=\"bi bi-gear\" viewBox=\"0 0 20 20\">\r\n       <path d=\"M7.068.727c.243-.97 1.62-.97 1.864 0l.071.286a.96.96 0 0 0 1.622.434l.205-.211c.695-.719 1.888-.03 1.613.931l-.08.284a.96.96 0 0 0 1.187 1.187l.283-.081c.96-.275 1.65.918.931 1.613l-.211.205a.96.96 0 0 0 .434 1.622l.286.071c.97.243.97 1.62 0 1.864l-.286.071a.96.96 0 0 0-.434 1.622l.211.205c.719.695.03 1.888-.931 1.613l-.284-.08a.96.96 0 0 0-1.187 1.187l.081.283c.275.96-.918 1.65-1.613.931l-.205-.211a.96.96 0 0 0-1.622.434l-.071.286c-.243.97-1.62.97-1.864 0l-.071-.286a.96.96 0 0 0-1.622-.434l-.205.211c-.695.719-1.888.03-1.613-.931l.08-.284a.96.96 0 0 0-1.186-1.187l-.284.081c-.96.275-1.65-.918-.931-1.613l.211-.205a.96.96 0 0 0-.434-1.622l-.286-.071c-.97-.243-.97-1.62 0-1.864l.286-.071a.96.96 0 0 0 .434-1.622l-.211-.205c-.719-.695-.03-1.888.931-1.613l.284.08a.96.96 0 0 0 1.187-1.186l-.081-.284c-.275-.96.918-1.65 1.613-.931l.205.211a.96.96 0 0 0 1.622-.434zM12.973 8.5H8.25l-2.834 3.779A4.998 4.998 0 0 0 12.973 8.5m0-1a4.998 4.998 0 0 0-7.557-3.779l2.834 3.78zM5.048 3.967l-.087.065zm-.431.355A4.98 4.98 0 0 0 3.002 8c0 1.455.622 2.765 1.615 3.678L7.375 8zm.344 7.646.087.065z\"/>";
 
-        public string? EnvironmentSettingsSVG_String = "<svg width=\"30\" height=\"30\" fill=\"@ButtonData?.ButtonColor\" class=\"bi bi-bounding-box\" viewBox=\"0 0 20 20\">\r\n        <path d=\"M5 2V0H0v5h2v6H0v5h5v-2h6v2h5v-5h-2V5h2V0h-5v2zm6 1v2h2v6h-2v2H5v-2H3V5h2V3zm1-2h3v3h-3zm3 11v3h-3v-3zM4 15H1v-3h3zM1 4V1h3v3z\" />\r\n    </svg>";
+        public string NeuralNetworkSVG_String = "<svg  width=\"30\" height=\"30\" fill=\"@ButtonData?.ButtonColor\" class=\"bi bi-share-fill\" viewBox=\"0 0 20 20\">\r\n  <path d=\"M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.5 2.5 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5\"/>\r\n</svg>";
+
+        public string? EnvironmentSettingsSVG_String = "<svg width=\"30\" height=\"30\" fill=\"@ButtonData?.ButtonColor\" class=\"bi bi-bounding-box\" viewBox=\"0 0 20 20\">\r\n        <path fill-rule=\"evenodd\" d=\"M3.1 11.2a.5.5 0 0 1 .4-.2H6a.5.5 0 0 1 0 1H3.75L1.5 15h13l-2.25-3H10a.5.5 0 0 1 0-1h2.5a.5.5 0 0 1 .4.2l3 4a.5.5 0 0 1-.4.8H.5a.5.5 0 0 1-.4-.8z\"/>\r\n  <path fill-rule=\"evenodd\" d=\"M4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999z\"/>";
 
         public string InstanceInformationSVG_String = "<svg width=\"30\" height=\"30\" fill=\"@ButtonData?.ButtonColor\" class=\"bi bi-clipboard-data\" viewBox=\"0 0 20 20\">\r\n        <path d=\"M4 11a1 1 0 1 1 2 0v1a1 1 0 1 1-2 0zm6-4a1 1 0 1 1 2 0v5a1 1 0 1 1-2 0zM7 9a1 1 0 0 1 2 0v3a1 1 0 1 1-2 0z\" />\r\n        <path d=\"M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1z\" />\r\n        <path d=\"M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0z\" />\r\n    </svg>";
 
@@ -19,6 +21,7 @@ namespace MLApplication_frontend.Components.Buttons
         public string AllAgentsSVG_String = "<svg width=\"30\" height=\"30\" fill=\"@ButtonData?.ButtonColor\" class=\"bi bi-people-fill\" viewBox=\"0 0 20 20\">\r\n   <path d=\"M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5.784 6A2.24 2.24 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.3 6.3 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5\"/>\r\n</svg>";
 
         public RenderFragment HyperParameterSettingsSVG { get; set; }
+        public RenderFragment NeuralNetworkSVG { get; set; }
         public RenderFragment EnvironmentSettingsSVG { get; set; }
         public RenderFragment InstanceInformationSVG { get; set; }
         public RenderFragment SubmitInstanceSVG { get; set; }
@@ -32,6 +35,11 @@ namespace MLApplication_frontend.Components.Buttons
             HyperParameterSettingsSVG = builder =>
             {
                 builder.AddMarkupContent(0, HyperParameterSettingsSVG_String);
+            };
+
+            NeuralNetworkSVG = builder =>
+            {
+                builder.AddMarkupContent(1, NeuralNetworkSVG_String);
             };
 
             EnvironmentSettingsSVG = builder =>

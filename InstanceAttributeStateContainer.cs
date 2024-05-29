@@ -13,32 +13,32 @@ namespace MLApplication_frontend
         /// Hyper Perameter Data
         /// </summary>
 
-        public string? NumberOfGenerations { get; set; }
+        public string? NumberOfGenerations { get; set; } = string.Empty;
 
-        public string? AgentsPerGeneration { get; set; }
+        public string? AgentsPerGeneration { get; set; } = string.Empty;
 
-        public string? StartingFitnessThreshold { get; set; }
+        public string? StartingFitnessThreshold { get; set; } = string.Empty;
 
-        public string? StartNewGenerationThreshold { get; set; } 
+        public string? StartNewGenerationThreshold { get; set; } = string.Empty;
 
-        public string? GenerationFailureThreshold { get; set; } 
+        public string? GenerationFailureThreshold { get; set; } = string.Empty;
 
-        public string? EnvironmentMaxActionCount { get; set; }
+        public string? EnvironmentMaxActionCount { get; set; } = string.Empty;
 
-        public string? NewGenerationCreationFunction { get; set; }
+        public string? NewGenerationCreationFunction { get; set; } = string.Empty;
 
         /// <summary>
         /// Neural Network Data
         /// </summary>
 
-        public string? HiddenLayerWeightInit { get; set; }
+        public string? HiddenLayerWeightInit { get; set; } = string.Empty;
 
-        public string? OutputLayerWeightInit { get; set; }
+        public string? OutputLayerWeightInit { get; set; } = string.Empty;
 
-        public string? HiddenLayerActivationFunction { get; set; }
+        public string? HiddenLayerActivationFunction { get; set; } = string.Empty;
 
-        public string? OutputLayerActivationFunction { get; set; }
-         
+        public string? OutputLayerActivationFunction { get; set; } = string.Empty;
+
 
         /// <summary>
         ///  Currently hard coded into the JSON conversion 
@@ -65,6 +65,16 @@ namespace MLApplication_frontend
         /// </summary>
         /// 
         public string? DataAsJson { get; set; }
+
+        public void SetNeuralNetworkSettingsDefaults() {
+            Console.WriteLine("Setting defaults");
+            HiddenLayerWeightInit = "he_weight";
+            OutputLayerWeightInit = "he_weight";
+            HiddenLayerActivationFunction = "rectified_linear_activation_function";
+            OutputLayerActivationFunction = "soft_argmax_activation";
+
+            NewGenerationCreationFunction = "crossover_weights_average";
+        }
 
         public void ToJsonString() {
 
