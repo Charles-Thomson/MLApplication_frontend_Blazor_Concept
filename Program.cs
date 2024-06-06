@@ -6,7 +6,8 @@ using Serilog.Extensions.Logging;
 using System.Diagnostics;
 using Microsoft.JSInterop;
 using System.Net.Http;
-using MLApplication_frontend.Components.Navigation.ApplicationSideNavigationPanel.NavigationPanelContent;
+using MLApplication_frontend.Components.SideContentPanel.PanelContent.GenerationalLearning.Application;
+
 
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);

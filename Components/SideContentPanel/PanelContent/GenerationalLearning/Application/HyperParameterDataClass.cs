@@ -1,4 +1,4 @@
-﻿namespace MLApplication_frontend.Components.Navigation.SideNavigationPanel.NavigationPanelContent
+﻿namespace MLApplication_frontend.Components.SideContentPanel.PanelContent.GenerationalLearning.Application
 {
     public class HyperParameterDataClass
     {

@@ -1,0 +1,26 @@
+﻿
+
+@inject ILogger<SideContentPanelTemplate> Logger
+@inject InstanceAttributeStateContainer stateContainer
+
+<div class="side-navigation-panel__container">
+    <div class="side-navigation-panel__button-group">
+        @* <PassedButtonGroup ChangeVisablePanelContent="@ChangeVisablePanelContent" /> *@
+        @ButtonGroup
+    </div>
+
+    <div class="side-navigation-panel__main-content__wrapper">
+        @if (ContentHeader != null)
+        {
+            <div class="side-navigation-panel__main-content__header">
+                @ContentHeader
+            </div>
+        }
+
+        <div class="side-navigation-panel__main-content__panel-content">
+            @VisablePanelContent?.PanelContent
+        </div>
+
+    </div>
+
+</div>

@@ -1,8 +1,9 @@
 ﻿@page "/generational_learning_application_page"
-@using MLApplication_frontend.Components.Navigation.ApplicationSideNavigationPanel
+
 @using MLApplication_frontend.Components.Navigation.TopNavigationBar
 @using MLApplication_frontend.Components.Environment
 @using MLApplication_frontend.Layout
+@using MLApplication_frontend.Components.SideContentPanel
 @inject InstanceAttributeStateContainer stateContainer
 
 
@@ -12,8 +13,12 @@
     </Content_NavigtionBar>
 
     <Content_LeftPanel>
-        <ApplicationNavigationPanel UpdateEnvironmentDimension_X_CallBack="@UpdateEnvironmentDimension_X" UpdateEnvironmentDimension_Y_CallBack="@UpdateEnvironmentDimension_Y" />
-    </Content_LeftPanel>
+       @*  <ApplicationNavigationPanel UpdateEnvironmentDimension_X_CallBack="@UpdateEnvironmentDimension_X" UpdateEnvironmentDimension_Y_CallBack="@UpdateEnvironmentDimension_Y" /> *@
+    
+        <SideContentPanelTemplate PanelContent="@PanelContent" ButtonGroupType="@ButtonGroupType">
+                  
+        </SideContentPanelTemplate>
+   </Content_LeftPanel>
 
     <Content_Main>
         <CascadingValue name="CurrentEnvironmentDimension_X" Value="@CurrentEnvironemntDimension_X">

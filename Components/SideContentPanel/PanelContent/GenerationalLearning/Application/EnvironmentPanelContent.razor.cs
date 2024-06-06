@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 
 
-namespace MLApplication_frontend.Components.Navigation.ApplicationSideNavigationPanel.NavigationPanelContent
+namespace MLApplication_frontend.Components.SideContentPanel.PanelContent.GenerationalLearning.Application
 {
     public partial class EnvironmentPanelContent
     {

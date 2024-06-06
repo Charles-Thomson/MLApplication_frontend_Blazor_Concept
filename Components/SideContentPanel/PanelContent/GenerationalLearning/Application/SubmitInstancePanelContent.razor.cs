@@ -8,7 +8,7 @@ using Serilog;
 using MLApplication_frontend.API;
 
 
-namespace MLApplication_frontend.Components.Navigation.ApplicationSideNavigationPanel.NavigationPanelContent
+namespace MLApplication_frontend.Components.SideContentPanel.PanelContent.GenerationalLearning.Application
 {
     public partial class SubmitInstancePanelContent
     {

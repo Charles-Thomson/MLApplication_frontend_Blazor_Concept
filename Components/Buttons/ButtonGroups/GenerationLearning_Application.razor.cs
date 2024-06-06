@@ -1,27 +1,28 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
-using MLApplication_frontend.Components.Buttons;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Serilog;
+using System.Data;
+using MLApplication_frontend.Components.Buttons;
 
-
-namespace MLApplication_frontend.Components.Navigation.ResultsNaviagtion
+namespace MLApplication_frontend.Components.Buttons.ButtonGroups
 {
-    public partial class ResultsNavigationButtonGroup
+    public partial class GenerationLearning_Application
     {
         [Parameter] public EventCallback<string> ChangeVisablePanelContent { get; set; }
-
-        
 
         public static NavigationButtonSVGs SVGFile = new NavigationButtonSVGs();
 
         public List<ButtonDataClass> ButtonDataInstances = new List<ButtonDataClass>
         {
-            new("AlphaAgentsContent", SVGFile.AlphasSVG),
-            new("GenerationsContent", SVGFile.GenerationSVG),
-            new("AllAgentsContent", SVGFile.AllAgentsSVG),
+            new("HyperParameterSettings", SVGFile.HyperParameterSettingsSVG),
+            new("NeuralNetworkSettings", SVGFile.NeuralNetworkSVG),
+            new("EnvironmentSettings", SVGFile.EnvironmentSettingsSVG),
+            new("InstanceInformation", SVGFile.InstanceInformationSVG),
+            new("SubmitInstance", SVGFile.SubmitInstanceSVG)
         };
 
         public void UpdateButtonState(string givenButtonID)

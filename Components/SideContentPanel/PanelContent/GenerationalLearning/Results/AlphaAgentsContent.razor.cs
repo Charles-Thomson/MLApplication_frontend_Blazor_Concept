@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using MLApplication_frontend.API;
 using Newtonsoft.Json.Linq;
 
-namespace MLApplication_frontend.Components.Navigation.ResultsNaviagtion.ResultsPanelContent
+namespace MLApplication_frontend.Components.SideContentPanel.PanelContent.GenerationalLearning.Results
 {
     public partial class AlphaAgentsContent
     {

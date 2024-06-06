@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
-using MLApplication_frontend.Components.Navigation.ApplicationSideNavigationPanel;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;

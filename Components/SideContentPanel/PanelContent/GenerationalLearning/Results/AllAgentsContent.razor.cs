@@ -10,7 +10,8 @@ using Newtonsoft.Json.Linq;
 using Microsoft.Extensions.Logging;
 
 
-namespace MLApplication_frontend.Components.Navigation.ResultsNaviagtion.ResultsPanelContent
+namespace MLApplication_frontend.Components.SideContentPanel.PanelContent.GenerationalLearning.Results
+
 {
     public partial class AllAgentsContent
     {

@@ -1,26 +1,30 @@
 ﻿@page "/generational_learning_results_page"
 @using MLApplication_frontend.Components.Navigation.TopNavigationBar
-@using MLApplication_frontend.Components.Navigation.ResultsNaviagtion
+
+@using MLApplication_frontend.Components.SideContentPanel
 
 
+<GenerationalLearning_ApplicationLayout>
+    <Content_NavigtionBar>
+        <TopNavigationBar></TopNavigationBar>
+    </Content_NavigtionBar>
 
-
-<TopNavigationBar />
-
-<div class="results-page__page-content-container">
-    
-    <div class="results-page__side-navigation-conatiner">
-        <ResultsNavigationPanel />
-    </div>
-
-    <div class="results-page__graph-content-container">
-        <canvas id="myChart" ></canvas>
+    <Content_LeftPanel>
         
-    </div>
-    
+        <SideContentPanelTemplate PanelContent="@PanelContent" ButtonGroupType="@ButtonGroupType">
+            <ContentHeader>
+                @PanelContent_Header
+            </ContentHeader>
+        </SideContentPanelTemplate>
+        
+   </Content_LeftPanel>
 
-    
-</div>
+    <Content_Main>
+        <canvas id="myChart"></canvas>
+    </Content_Main>
+
+
+</GenerationalLearning_ApplicationLayout>
 
 
 

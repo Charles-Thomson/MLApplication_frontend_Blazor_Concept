@@ -1,0 +1,30 @@
+﻿@inject InstanceAttributeStateContainer stateContainer;
+@using Microsoft.AspNetCore.Components;
+
+
+<div class="instance-selection"></div>
+
+    <div class="instance-selection__heading">Select Instance</div>
+
+    <div class="instance-selection__main-content__container">
+    <div class="instance-selction__page_element__padding" style="@InstanceSelectionMenuVisableStyle">
+        <select @bind="@SelectedInstanceID" class="instance-selction__page_element__dropdown-menu">
+            @foreach (string ID in @InstanceIDS)
+            {
+                <option value="@ID">@ID</option>
+            }
+        </select>
+    </div>
+    
+    <div class="instance-selction__page_element__padding">
+        <button class="faded-label-button"   @onclick="@ToggleInstanceInformationVisibility">Show Instance Information</button>
+    </div>
+    <div class="instance-selction__expandable-tab" style="@InsatnceInformationVisibleStyle">
+        <div>Instance ID: @CurrentInstanceData?.InstanceId</div>
+        <div>Number of generations: @CurrentInstanceData?.NumberOfSuccessfulGenerations</div>
+        <div>Fitness Progression By Generation</div>
+        @* <button class="faded-label-button" @onclick="@PlotGenerationAverageFitness">Show </button> *@
+    </div>
+    
+    
+</div>
