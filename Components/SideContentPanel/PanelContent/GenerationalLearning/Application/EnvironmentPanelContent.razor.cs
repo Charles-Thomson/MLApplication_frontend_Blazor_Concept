@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
+using MLApplication_frontend.Components.Buttons;
 using Serilog;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,8 @@ namespace MLApplication_frontend.Components.SideContentPanel.PanelContent.Genera
 {
     public partial class EnvironmentPanelContent
     {
+
+        public EnvironmentButtonsSVGs EnvironemntButtonSVGs = new EnvironmentButtonsSVGs();
 
         [Parameter]
         public EventCallback<string> UpdateEnvironmentDimension_X_CallBack { get; set; }

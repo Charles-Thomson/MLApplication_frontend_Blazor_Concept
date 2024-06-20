@@ -1,5 +1,6 @@
 ﻿@inject InstanceAttributeStateContainer stateContainer
 @inject ILogger<EnvironmentPanelContent> Logger
+@using MLApplication_frontend.Components.Buttons
 
 <div class="side-navigation-panel__content-container">
 
@@ -33,6 +34,29 @@
     </div>
 
     <div class="side-navigation-panel__sub-headding">Node Selection</div>
+
+    
+    <div class="page_element">
+        
+        <div class="page_element__button-group">
+
+            <div class="page_element__button-group__button">
+                @EnvironemntButtonSVGs.StartIcon_svg
+            </div>
+            <div class="page_element__button-group__button">
+                @EnvironemntButtonSVGs.GoalIcon_svg
+            </div>
+            <div class="page_element__button-group__button">
+                @EnvironemntButtonSVGs.ObsticalIcon_svg
+            </div>
+            <div class="page_element__button-group__button">
+                @EnvironemntButtonSVGs.EmptyIcon_svg
+            </div>
+
+        </div>
+    </div>
+
+    
 
 </div>
 

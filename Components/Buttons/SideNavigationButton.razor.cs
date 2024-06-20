@@ -18,10 +18,7 @@ namespace MLApplication_frontend.Components.Buttons
             if (ButtonData != null)
             {
                 UpdatedSelectedButtons.InvokeAsync(ButtonData.ButtonID);
-
             }
-
         }
-       
     }
 }

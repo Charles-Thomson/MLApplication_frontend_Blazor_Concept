@@ -13,8 +13,6 @@ namespace MLApplication_frontend.Components.Buttons.ButtonGroups
     {
         [Parameter] public EventCallback<string> ChangeVisablePanelContent { get; set; }
 
-
-
         public static NavigationButtonSVGs SVGFile = new NavigationButtonSVGs();
 
         public List<ButtonDataClass> ButtonDataInstances = new List<ButtonDataClass>
