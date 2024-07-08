@@ -7,10 +7,24 @@ namespace MLApplication_frontend.Components.Environment
 {
     public partial class ConstructedEnvironment
     {
+        public int _NodeTypeSelectionValue { get; set; } 
+        [CascadingParameter(Name = "NodeTypeSelectionValue_cascade")] public int NodeTypeSelectionValue {
+            get => _NodeTypeSelectionValue;
+            
+            set {
+                UpdateFunc(value);
+            } 
+        }
+
+        
+
+        public void UpdateFunc(int value) {
+            Log.Information($"Cascaded value {value}");
+            _NodeTypeSelectionValue = value;
+        }
 
         public List<EnvironmentNode> EnvioronmentNodeList = new List<EnvironmentNode>();
         public int TotalNumberOfNodesInEnvironment { get; set; }
-        public int SelectionValue { get; set; } = 0;
         public int DefaultEnvironmentDimensions { get; set; } = 5;
 
         public int _CurrentEnvironemntDimension_X { get; set; }
@@ -51,10 +65,6 @@ namespace MLApplication_frontend.Components.Environment
             return generateNodes;
         }
 
-        public void ChangeSelectionValue(int newValue) {
-            Log.Information($"ChangeSelectionValue updated to {newValue}");
-            SelectionValue = newValue;
-        }
         public void SetNewStartNode(int Index) => stateContainer.EnvironmentStartState = Index;
 
         public void RemoveOldStartNodeFromEnvironment() {

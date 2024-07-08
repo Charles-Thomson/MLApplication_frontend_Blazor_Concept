@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
+using Microsoft.AspNetCore.Components.Web;
 using MLApplication_frontend.Components.Buttons;
 using Serilog;
 using System;
@@ -20,6 +21,9 @@ namespace MLApplication_frontend.Components.SideContentPanel.PanelContent.Genera
         [Parameter]
         public EventCallback<string> UpdateEnvironmentDimension_Y_CallBack { get; set; }
 
+        [Parameter]
+        public EventCallback<int> UpdateEnvironmentNodeTypeSelector { get; set; }
+
 
         public List<string> AvailableEnvironmentDimensions = new()
         {
@@ -37,6 +41,19 @@ namespace MLApplication_frontend.Components.SideContentPanel.PanelContent.Genera
             _EnvironmentDimension_X = AvailableEnvironmentDimensions[0];
             _EnvironmentDimension_Y = AvailableEnvironmentDimensions[0];
             
+        }
+
+        /// <summary>
+        /// Update the selection value for the setting of the node states
+        /// 0 = Empty
+        /// 1 = Goal
+        /// 2 = Obstical
+        /// 3 = Start Location
+        /// </summary>
+        /// <param name="newValue"></param>
+        public void UpdateEnvironemntNodeSelectionType(int newSelectionValue) {
+            Log.Information($"EnvironmentPanel - Updating Selection Value ;  {newSelectionValue}");
+            UpdateEnvironmentNodeTypeSelector.InvokeAsync(newSelectionValue);
         }
 
         public string? _EnvironmentDimension_X { get; set; }

@@ -12,6 +12,8 @@ namespace MLApplication_frontend
         /// <summary>
         /// Hyper Perameter Data
         /// </summary>
+        /// 
+        public int NodeSelectionValue { get; set; } = 0;
 
         public string? NumberOfGenerations { get; set; } = string.Empty;
 

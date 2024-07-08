@@ -16,6 +16,8 @@ namespace MLApplication_frontend.Pages.GenerationalLearningPages
     {
         public List<PanelContent_Class>? PanelContent { get; set; }
 
+        
+
         public string ButtonGroupType = "ApplicationButtonGroup";
 
         public ApplicationPage(){
@@ -38,6 +40,7 @@ namespace MLApplication_frontend.Pages.GenerationalLearningPages
                     builder.OpenComponent(0, typeof(EnvironmentPanelContent));
                     builder.AddAttribute(1, "UpdateEnvironmentDimension_X_CallBack", EventCallback.Factory.Create<string> (this,UpdateEnvironmentDimension_X));
                     builder.AddAttribute(2, "UpdateEnvironmentDimension_Y_CallBack",EventCallback.Factory.Create<string>(this, UpdateEnvironmentDimension_Y));
+                    builder.AddAttribute(3, "UpdateEnvironmentNodeTypeSelector", EventCallback.Factory.Create<int>(this,UpdateEnvironmentNodeTypeSelector ));
                     builder.CloseComponent();
                 }),
 
@@ -68,9 +71,20 @@ namespace MLApplication_frontend.Pages.GenerationalLearningPages
             stateContainer.EnvironmentDimension_Y = newDimension_Y;
         }
 
+        public void UpdateEnvironmentNodeTypeSelector(int newValue) {
+            //NodeTypeSelectionValue = newValue;
+            stateContainer.NodeSelectionValue = newValue;
+            Log.Information($"ApplicationPage - Updating Selection Value ;  {newValue}");
+            Log.Information($"ApplicationPage - NodeTypeSelectionValue ;  {NodeTypeSelectionValue}");
+            
+        }
+
+
+
         public int CurrentEnvironemntDimension_X { get; set; } = 5;
         public int CurrentEnvironemntDimension_Y { get; set; } = 5;
+        public int NodeTypeSelectionValue { get; set; } 
 
-        
+
     }
 }

@@ -13,17 +13,17 @@
     </Content_NavigtionBar>
 
     <Content_LeftPanel>
-       @*  <ApplicationNavigationPanel UpdateEnvironmentDimension_X_CallBack="@UpdateEnvironmentDimension_X" UpdateEnvironmentDimension_Y_CallBack="@UpdateEnvironmentDimension_Y" /> *@
-    
-        <SideContentPanelTemplate PanelContent="@PanelContent" ButtonGroupType="@ButtonGroupType">
-                  
+       
+        <SideContentPanelTemplate PanelContent="@PanelContent" ButtonGroupType="@ButtonGroupType">           
         </SideContentPanelTemplate>
    </Content_LeftPanel>
 
     <Content_Main>
-        <CascadingValue name="CurrentEnvironmentDimension_X" Value="@CurrentEnvironemntDimension_X">
-            <CascadingValue name="CurrentEnvironmentDimension_Y" Value="@CurrentEnvironemntDimension_Y">
-                <ConstructedEnvironment />
+        <CascadingValue name="NodeTypeSelectionValue_cascade" Value="@NodeTypeSelectionValue">
+            <CascadingValue name="CurrentEnvironmentDimension_X" Value="@CurrentEnvironemntDimension_X">
+                <CascadingValue name="CurrentEnvironmentDimension_Y" Value="@CurrentEnvironemntDimension_Y">
+                    <ConstructedEnvironment />
+                </CascadingValue>
             </CascadingValue>
         </CascadingValue>
 

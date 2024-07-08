@@ -21,7 +21,7 @@ namespace MLApplication_frontend.Components.Environment
             this.updateEnvironmentNodeStateData = updateEnvironmentNodeStateData;
         }
 
-        public void inc(int selectionValue)
+        public void UpdateNodeType(int selectionValue)
         {
             updateEnvironmentNodeStateData(Index, selectionValue);
         }

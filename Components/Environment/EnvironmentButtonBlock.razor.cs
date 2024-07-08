@@ -24,6 +24,7 @@ namespace MLApplication_frontend.Components.Environment
         /// <param name="newValue"></param>
         public void Handle_UpdateNodeStateSlectionValue(int newValue) {
             UpdateNodeStateSelectionValue?.Invoke(newValue);
+            Log.Information($"Updating environment button selection {newValue}");
         }
     }
 }
