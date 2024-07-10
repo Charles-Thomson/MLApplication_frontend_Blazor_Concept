@@ -7,21 +7,7 @@ namespace MLApplication_frontend.Components.Environment
 {
     public partial class ConstructedEnvironment
     {
-        public int _NodeTypeSelectionValue { get; set; } 
-        [CascadingParameter(Name = "NodeTypeSelectionValue_cascade")] public int NodeTypeSelectionValue {
-            get => _NodeTypeSelectionValue;
-            
-            set {
-                UpdateFunc(value);
-            } 
-        }
-
-        
-
-        public void UpdateFunc(int value) {
-            Log.Information($"Cascaded value {value}");
-            _NodeTypeSelectionValue = value;
-        }
+       
 
         public List<EnvironmentNode> EnvioronmentNodeList = new List<EnvironmentNode>();
         public int TotalNumberOfNodesInEnvironment { get; set; }
@@ -59,7 +45,7 @@ namespace MLApplication_frontend.Components.Environment
             if (environmentSizeAsInt < 0) throw new ArgumentException("Environment size must be a positive integer.");
             
             var generateNodes = Enumerable.Range(0, environmentSizeAsInt)
-                .Select(index => new EnvironmentNode(index, updateEnvironmentNodeStateData))
+                .Select(index => new EnvironmentNode(index))
                 .ToList();
 
             return generateNodes;
@@ -72,33 +58,46 @@ namespace MLApplication_frontend.Components.Environment
             if (Node == null) return;
             Node.BackgroundColor = NodeBackgroundColors.Empty;
         }
-        public void updateEnvironmentNodeStateData(int Index, int newValue) {
+        public void updateEnvironmentNodeStateData(int Index) {
             CheckEnvironmentNodeStateDataListSize();
+            int NewNodeValue = 0;
 
             var SelectedNode = EnvioronmentNodeList[Index];
-            switch (newValue)
+            switch (stateContainer.NodeSelectionValue)
             {
-                case (int)NodeStates.Empty: 
+                case NodeStates.Empty:
+                    NewNodeValue = (int)NodeStates.Empty;
                     SelectedNode.BackgroundColor = NodeBackgroundColors.Empty;
                     
+
                     break;
-                case (int)NodeStates.Goal: 
+                case NodeStates.Goal:
+                    NewNodeValue = (int)NodeStates.Goal;
                     SelectedNode.BackgroundColor = NodeBackgroundColors.Goal;
                     
                     break;
-                case (int)NodeStates.Obstical: 
+
+                case NodeStates.Obstical:
+                    NewNodeValue = (int)NodeStates.Obstical;
                     SelectedNode.BackgroundColor = NodeBackgroundColors.Obstical;
+                    
                     break;
-                case (int)NodeStates.Start:
+
+                case NodeStates.Start:
                     SetNewStartNode(Index);
                     RemoveOldStartNodeFromEnvironment();
+
+                    NewNodeValue = (int)NodeStates.Start;
                     SelectedNode.BackgroundColor = NodeBackgroundColors.Start;
+                    
                     return;
+
                 default:
                     SelectedNode.BackgroundColor = NodeBackgroundColors.Empty;
                     break;
             }
-            stateContainer.EnvironmentNodeStateData[Index] = newValue;
+      
+            stateContainer.EnvironmentNodeStateData[Index] = NewNodeValue;
             StateHasChanged();
         }
 

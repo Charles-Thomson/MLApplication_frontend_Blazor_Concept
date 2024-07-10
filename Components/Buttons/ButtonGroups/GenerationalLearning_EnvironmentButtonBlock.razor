@@ -1,0 +1,21 @@
+﻿@inject ILogger<GenerationalLearning_EnvironmentButtonBlock> Logger
+@using MLApplication_frontend.Components.Buttons
+@using static MLApplication_frontend.Components.Environment.NodeEnums
+
+<div class="page_element__button-group">
+    <button class="page_element__button-group__button" @onclick="@(e => @Handle_ButtonPresed_Callback(NodeStates.Start))">
+        @EnvironemntButtonSVGs.StartIcon_svg
+    </button>
+
+    <button class="page_element__button-group__button" @onclick="@(e => @Handle_ButtonPresed_Callback(NodeStates.Goal))">
+        @EnvironemntButtonSVGs.GoalIcon_svg
+    </button>
+
+    <button class="page_element__button-group__button" @onclick="@(e => @Handle_ButtonPresed_Callback(NodeStates.Obstical))">
+        @EnvironemntButtonSVGs.ObsticalIcon_svg
+    </button>
+
+    <button class="page_element__button-group__button" @onclick="@(e => @Handle_ButtonPresed_Callback(NodeStates.Empty))">
+        @EnvironemntButtonSVGs.EmptyIcon_svg
+    </button>
+</div>

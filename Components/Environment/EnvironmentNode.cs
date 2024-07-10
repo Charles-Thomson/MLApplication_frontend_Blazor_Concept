@@ -12,20 +12,11 @@ namespace MLApplication_frontend.Components.Environment
     {
         public int Index { get; set; }
         public string BackgroundColor = "whitesmoke";
-        private Action<int, int> updateEnvironmentNodeStateData;
         
-
-        public EnvironmentNode(int index, Action<int, int> updateEnvironmentNodeStateData)
+        public EnvironmentNode(int index)
         {
-            this.Index = index;
-            this.updateEnvironmentNodeStateData = updateEnvironmentNodeStateData;
-        }
-
-        public void UpdateNodeType(int selectionValue)
-        {
-            updateEnvironmentNodeStateData(Index, selectionValue);
+            this.Index = index; 
         }
     }
-
 }
 

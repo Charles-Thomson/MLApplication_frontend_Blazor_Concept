@@ -6,7 +6,7 @@
     <div style="grid-template-columns: repeat(@CurrentEnvironemntDimension_X, 1fr);grid-template-rows: repeat(@CurrentEnvironemntDimension_Y, 1fr);" class="environment__layout">
         @foreach (var elm in @EnvioronmentNodeList)
         {
-            <div class="environment-maze-node" style="background-color: @elm.BackgroundColor;" id="@elm.Index" @onclick="@(() => @elm.UpdateNodeType(@stateContainer.NodeSelectionValue))"> </div>
+            <div class="environment-maze-node" style="background-color: @elm.BackgroundColor;" id="@elm.Index" @onclick="@(e => updateEnvironmentNodeStateData(@elm.Index))" />
         }
     </div>
     

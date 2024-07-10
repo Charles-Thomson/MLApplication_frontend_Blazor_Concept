@@ -41,18 +41,6 @@ namespace MLApplication_frontend.Pages.GenerationalLearningPages
         public Agent? CurrentlySelectedAgent { get; set; } = new();
         public InstanceBaseData? CurrentInstanceData { get; set; } = new();
         public InstanceEnvironment? CurrentEnvironmentData { get; set; } = new();
-
-        //private string _SelectedInstanceID { get; set; } = string.Empty;
-        //public string SelectedInstanceID
-        //{
-        //    get => _SelectedInstanceID;
-        //    set
-        //    {
-        //        _SelectedInstanceID = value;
-        //        SelectedInstanceIdUpdated(value);
-        //    }
-        //}
-
         public string SelectedInstanceID { get; set; }
 
         /// <summary>

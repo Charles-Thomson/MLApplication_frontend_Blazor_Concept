@@ -54,40 +54,6 @@
     background-color: whitesmoke;
 }
 
-.page_element__button-group {
-    display: flex;
-    
-    height: 100%;
-    width: 100%;
-    background-color: transparent;
-    justify-content: space-evenly;
-    align-content: center;
-}
 
-
-.page_element__button-group__button {
-    position: relative;
-    
-    
-    width: 100%;
-    z-index: 1;
-    background-color: transparent;
-    -webkit-transition-duration: 0.5s;
-    -moz-transition-duration: 0.5s;
-    -o-transition-duration: 0.5s;
-    transition-duration: 0.5s;
-    border: none;
-    border-right: 1px solid lightgrey;
-    padding: 10px;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-}
-
-
-
-.page_element__button-group__button:last-child {
-    border-right: none; /* Remove right border from the last button */
-}
 
 

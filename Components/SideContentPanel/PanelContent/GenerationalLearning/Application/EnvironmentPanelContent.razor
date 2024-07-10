@@ -1,6 +1,7 @@
 ﻿@inject InstanceAttributeStateContainer stateContainer
 @inject ILogger<EnvironmentPanelContent> Logger
 @using MLApplication_frontend.Components.Buttons
+@using MLApplication_frontend.Components.Buttons.ButtonGroups
 
 <div class="side-navigation-panel__content-container">
 
@@ -37,24 +38,7 @@
 
     
     <div class="page_element">
-        
-        <div class="page_element__button-group">
-            <button class="page_element__button-group__button" @onclick="@(e => @UpdateEnvironemntNodeSelectionType(3))">
-                @EnvironemntButtonSVGs.StartIcon_svg
-            </button>
-
-            <button class="page_element__button-group__button" @onclick="@(e => @UpdateEnvironemntNodeSelectionType(1))">
-                @EnvironemntButtonSVGs.GoalIcon_svg
-            </button>
-
-            <button class="page_element__button-group__button" @onclick="@(e => @UpdateEnvironemntNodeSelectionType(2))">
-                @EnvironemntButtonSVGs.ObsticalIcon_svg
-            </button>
-
-            <button class="page_element__button-group__button" @onclick="@(e => @UpdateEnvironemntNodeSelectionType(0))">
-                @EnvironemntButtonSVGs.EmptyIcon_svg
-            </button>
-        </div>
+        <GenerationalLearning_EnvironmentButtonBlock ButtonPressed_callback="@UpdateEnvironmentNodeTypeSelector" />
     </div>
 </div>
 

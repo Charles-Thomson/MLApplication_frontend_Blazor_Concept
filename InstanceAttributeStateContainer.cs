@@ -1,6 +1,7 @@
 ﻿using MLApplication_frontend.Pages.GenerationalLearningPages;
 using System.Dynamic;
 using System.Text.Json;
+using static MLApplication_frontend.Components.Environment.NodeEnums;
 
 namespace MLApplication_frontend
 {
@@ -13,7 +14,7 @@ namespace MLApplication_frontend
         /// Hyper Perameter Data
         /// </summary>
         /// 
-        public int NodeSelectionValue { get; set; } = 0;
+        public NodeStates NodeSelectionValue { get; set; }
 
         public string? NumberOfGenerations { get; set; } = string.Empty;
 

@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using static MLApplication_frontend.Components.Environment.NodeEnums;
 
 
 namespace MLApplication_frontend.Pages.GenerationalLearningPages
@@ -40,7 +41,7 @@ namespace MLApplication_frontend.Pages.GenerationalLearningPages
                     builder.OpenComponent(0, typeof(EnvironmentPanelContent));
                     builder.AddAttribute(1, "UpdateEnvironmentDimension_X_CallBack", EventCallback.Factory.Create<string> (this,UpdateEnvironmentDimension_X));
                     builder.AddAttribute(2, "UpdateEnvironmentDimension_Y_CallBack",EventCallback.Factory.Create<string>(this, UpdateEnvironmentDimension_Y));
-                    builder.AddAttribute(3, "UpdateEnvironmentNodeTypeSelector", EventCallback.Factory.Create<int>(this,UpdateEnvironmentNodeTypeSelector ));
+                    builder.AddAttribute(3, "UpdateEnvironmentNodeTypeSelector", EventCallback.Factory.Create<NodeStates>(this,UpdateEnvironmentNodeTypeSelector ));
                     builder.CloseComponent();
                 }),
 
@@ -71,7 +72,7 @@ namespace MLApplication_frontend.Pages.GenerationalLearningPages
             stateContainer.EnvironmentDimension_Y = newDimension_Y;
         }
 
-        public void UpdateEnvironmentNodeTypeSelector(int newValue) {
+        public void UpdateEnvironmentNodeTypeSelector(NodeStates newValue) {
             //NodeTypeSelectionValue = newValue;
             stateContainer.NodeSelectionValue = newValue;
             Log.Information($"ApplicationPage - Updating Selection Value ;  {newValue}");
