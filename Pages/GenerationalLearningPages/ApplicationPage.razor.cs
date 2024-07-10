@@ -73,11 +73,8 @@ namespace MLApplication_frontend.Pages.GenerationalLearningPages
         }
 
         public void UpdateEnvironmentNodeTypeSelector(NodeStates newValue) {
-            //NodeTypeSelectionValue = newValue;
             stateContainer.NodeSelectionValue = newValue;
-            Log.Information($"ApplicationPage - Updating Selection Value ;  {newValue}");
-            Log.Information($"ApplicationPage - NodeTypeSelectionValue ;  {NodeTypeSelectionValue}");
-            
+            Log.Information($"ApplicationPage - Updating Selection Value ;  {newValue}");   
         }
 
 
