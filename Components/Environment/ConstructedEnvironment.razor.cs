@@ -2,7 +2,7 @@
 using Newtonsoft.Json.Linq;
 using Serilog;
 using System.Runtime.InteropServices;
-using static MLApplication_frontend.Components.Environment.NodeEnums;
+using static MLApplication_frontend.Enums.EnvironmentNodeEnums;
 
 namespace MLApplication_frontend.Components.Environment
 {
@@ -59,7 +59,7 @@ namespace MLApplication_frontend.Components.Environment
             var Node = EnvioronmentNodeList[stateContainer.EnvironmentStartState];
             if (Node == null) return;
             
-            Node.BackgroundColor = NodeBackgroundColors.Empty;
+            Node.BackgroundColor = NodeBackgroundColorsEnums.Empty;
             stateContainer.EnvironmentNodeStateData[stateContainer.EnvironmentStartState] = 0;
         }
 
@@ -67,18 +67,18 @@ namespace MLApplication_frontend.Components.Environment
             CheckEnvironmentNodeStateDataListSize();
 
             var SelectedNode = EnvioronmentNodeList[Index];
-            NodeStates CurrentSelectionNode = stateContainer.NodeSelectionValue;
+            NodeStateEnums CurrentSelectionNode = stateContainer.NodeSelectionValue;
 
             SelectedNode.BackgroundColor = CurrentSelectionNode switch
             {
-                NodeStates.Empty => NodeBackgroundColors.Empty,
-                NodeStates.Start => NodeBackgroundColors.Start,
-                NodeStates.Obstical => NodeBackgroundColors.Obstical,
-                NodeStates.Goal => NodeBackgroundColors.Goal,
-                _ => NodeBackgroundColors.Empty    
+                NodeStateEnums.Empty => NodeBackgroundColorsEnums.Empty,
+                NodeStateEnums.Start => NodeBackgroundColorsEnums.Start,
+                NodeStateEnums.Obstical => NodeBackgroundColorsEnums.Obstical,
+                NodeStateEnums.Goal => NodeBackgroundColorsEnums.Goal,
+                _ => NodeBackgroundColorsEnums.Empty    
             };
 
-            if (stateContainer.NodeSelectionValue == NodeStates.Start)
+            if (stateContainer.NodeSelectionValue == NodeStateEnums.Start)
             {
                 RemoveOldStartNodeFromEnvironment();
                 SetNewStartNode(Index);

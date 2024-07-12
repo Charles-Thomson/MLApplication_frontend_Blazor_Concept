@@ -1,9 +1,8 @@
-﻿namespace MLApplication_frontend.Components.Environment
+﻿namespace MLApplication_frontend.Enums
 {
-    public static class NodeEnums
+    public static class EnvironmentNodeEnums
     {
-
-        public enum NodeStates
+        public enum NodeStateEnums
         {
             Empty = 0,
             Goal = 1,
@@ -11,7 +10,8 @@
             Start = 3
         }
 
-        public static class NodeBackgroundColors {
+        public static class NodeBackgroundColorsEnums
+        {
             public const string Empty = "whitesmoke";
             public const string Goal = "rgba(0, 255, 0, 1)";
             public const string Obstical = "rgba(255, 10, 0, 1)";

@@ -7,7 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using static MLApplication_frontend.Components.Environment.NodeEnums;
+using static MLApplication_frontend.Enums.EnvironmentNodeEnums;
 
 namespace MLApplication_frontend.Components.SideContentPanel.PanelContent.GenerationalLearning.Application
 {
@@ -20,7 +20,7 @@ namespace MLApplication_frontend.Components.SideContentPanel.PanelContent.Genera
         [Parameter]
         public EventCallback<string> UpdateEnvironmentDimension_Y_CallBack { get; set; }
         [Parameter]
-        public EventCallback<NodeStates> UpdateEnvironmentNodeTypeSelector { get; set; }
+        public EventCallback<NodeStateEnums> UpdateEnvironmentNodeTypeSelector { get; set; }
 
         public List<string> AvailableEnvironmentDimensions = new()
         {

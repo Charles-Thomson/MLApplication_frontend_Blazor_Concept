@@ -1,21 +1,21 @@
 ﻿@inject ILogger<GenerationalLearning_EnvironmentButtonBlock> Logger
 @using MLApplication_frontend.Components.Buttons
-@using static MLApplication_frontend.Components.Environment.NodeEnums
+@using static MLApplication_frontend.Enums.EnvironmentNodeEnums
 
 <div class="page_element__button-group">
-    <button class="page_element__button-group__button" @onclick="@(e => @Handle_ButtonPresed_Callback(NodeStates.Start))">
+    <button class="page_element__button-group__button" @onclick="@(e => @Handle_ButtonPresed_Callback(NodeStateEnums.Start))">
         @EnvironemntButtonSVGs.StartIcon_svg
     </button>
 
-    <button class="page_element__button-group__button" @onclick="@(e => @Handle_ButtonPresed_Callback(NodeStates.Goal))">
+    <button class="page_element__button-group__button" @onclick="@(e => @Handle_ButtonPresed_Callback(NodeStateEnums.Goal))">
         @EnvironemntButtonSVGs.GoalIcon_svg
     </button>
 
-    <button class="page_element__button-group__button" @onclick="@(e => @Handle_ButtonPresed_Callback(NodeStates.Obstical))">
+    <button class="page_element__button-group__button" @onclick="@(e => @Handle_ButtonPresed_Callback(NodeStateEnums.Obstical))">
         @EnvironemntButtonSVGs.ObsticalIcon_svg
     </button>
 
-    <button class="page_element__button-group__button" @onclick="@(e => @Handle_ButtonPresed_Callback(NodeStates.Empty))">
+    <button class="page_element__button-group__button" @onclick="@(e => @Handle_ButtonPresed_Callback(NodeStateEnums.Empty))">
         @EnvironemntButtonSVGs.EmptyIcon_svg
     </button>
 </div>

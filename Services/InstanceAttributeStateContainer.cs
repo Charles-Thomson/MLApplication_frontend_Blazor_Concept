@@ -1,9 +1,9 @@
 ﻿using MLApplication_frontend.Pages.GenerationalLearningPages;
 using System.Dynamic;
 using System.Text.Json;
-using static MLApplication_frontend.Components.Environment.NodeEnums;
+using static MLApplication_frontend.Enums.EnvironmentNodeEnums;
 
-namespace MLApplication_frontend
+namespace MLApplication_frontend.Services
 {
     public class InstanceAttributeStateContainer
     {
@@ -14,7 +14,7 @@ namespace MLApplication_frontend
         /// Hyper Perameter Data
         /// </summary>
         /// 
-        public NodeStates NodeSelectionValue { get; set; }
+        public NodeStateEnums NodeSelectionValue { get; set; }
 
         public string? NumberOfGenerations { get; set; } = string.Empty;
 
@@ -60,8 +60,8 @@ namespace MLApplication_frontend
         public string? EnvironmentDimension_Y { get; set; }
 
         public int EnvironmentStartState { get; set; }
-        
-        public List<int>? EnvironmentNodeStateData { get; set; } 
+
+        public List<int>? EnvironmentNodeStateData { get; set; }
 
         /// <summary>
         /// Convert Data to Json for API use
@@ -69,7 +69,8 @@ namespace MLApplication_frontend
         /// 
         public string? DataAsJson { get; set; }
 
-        public void SetNeuralNetworkSettingsDefaults() {
+        public void SetNeuralNetworkSettingsDefaults()
+        {
             Console.WriteLine("Setting defaults");
             HiddenLayerWeightInit = "he_weight";
             OutputLayerWeightInit = "he_weight";
@@ -79,7 +80,8 @@ namespace MLApplication_frontend
             NewGenerationCreationFunction = "crossover_weights_average";
         }
 
-        public void ToJsonString() {
+        public void ToJsonString()
+        {
 
             var data = new
             {
@@ -112,10 +114,11 @@ namespace MLApplication_frontend
                 }
             };
 
-            DataAsJson =  JsonSerializer.Serialize(data, new JsonSerializerOptions { WriteIndented = true });
+            DataAsJson = JsonSerializer.Serialize(data, new JsonSerializerOptions { WriteIndented = true });
         }
 
-        public string ConvertToAPIQUery() {
+        public string ConvertToAPIQUery()
+        {
             return $"/MLAPI?query={{newWorkItem(inputConfig:\"\"\"{DataAsJson}\"\"\")}}";
         }
 

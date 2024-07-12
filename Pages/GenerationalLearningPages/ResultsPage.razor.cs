@@ -13,20 +13,16 @@ namespace MLApplication_frontend.Pages.GenerationalLearningPages
 {
     public partial class ResultsPage{
 
-        ///  JS Interlop runtime
         [Inject] protected IJSRuntime JSRuntime { get; set; }
+        [Inject] protected HttpClient HttpClient { get; set; } = new() { BaseAddress = new Uri("http://127.0.0.1:8000") };
 
-        /// GraphPlotting Functions
         public GraphPlottingFunctionCalls GraphPlottingFunctions { get; set; }
+        public APIHandler ApiHandler { get; set; }
 
-        /// HTTP Client
-        static readonly HttpClient newClient = new() { BaseAddress = new Uri("http://127.0.0.1:8000") };
-
-        ///  API handler
-        public APIHandler apiHandler { get; set; } = new APIHandler(newClient: newClient);
         public List<PanelContent_Class>? PanelContent { get; set; }
         public RenderFragment PanelContent_Header { get; set; }
 
+        
         public string ButtonGroupType = "ResultsButtonGroup";
         public List<string>? InstanceIDS { get; set; } = new() { "None Found" };
         public List<string>? GenereationIDs { get; set; } = new() { "None Found" };
@@ -43,18 +39,83 @@ namespace MLApplication_frontend.Pages.GenerationalLearningPages
         public InstanceEnvironment? CurrentEnvironmentData { get; set; } = new();
         public string SelectedInstanceID { get; set; }
 
+        public ResultsPage()
+        {
+            InitalizePanelConent();
+        }
+
+        protected override async Task OnInitializedAsync()
+        {
+            HttpClient newClient = new() { BaseAddress = new Uri("http://127.0.0.1:8000") };
+            ApiHandler = new APIHandler(newClient: newClient);
+
+            List<string>? ReturnedIds = await ApiHandler.API_GetAllInstanceIDs();
+            if (ReturnedIds != null)
+            {
+                InstanceIDS = ReturnedIds;
+                InstanceIDS.Insert(0, "");
+                
+                //StateHasChanged();
+            }
+
+            GraphPlottingFunctions = new(jsRuntime: JSRuntime);
+            await GraphPlottingFunctions.PlotEnvironmentGraph();
+        }
+
         /// <summary>
         /// On SelectedInstanceID updated - call the following functions
         /// </summary>
         /// <param name="value">The value SelectedInstanceID is update with</param>
-        public void SelectedInstanceIdUpdated(string value)
+        public async Task SelectedInstanceIdUpdated(string value)
         {
-            if (IsStringNull(value)) return;
+            if (IsStringNullOrEmpty(value)) return;
             SelectedInstanceID = value;
-            GetInstanceData(value);
-            GetGenerationIDs(value);
-            GetAlphaAgents(value);
+            await GetInstanceData(value);
+            await GetGenerationIDs(value);
+            await GetAlphaAgents(value);
         }
+
+
+        /// <summary>
+        /// Get Request via API - Get alphe agents with relation to the given instance(ID)
+        /// </summary>
+        /// <param name="instanceID">ID of the Instance AlphaAgents share a relation to</param>
+        public async Task GetAlphaAgents(string instanceID)
+        {
+            if (IsStringNullOrEmpty(instanceID)) return;
+            SelectedInstance_AlphaAgentsData = await ApiHandler.API_AlphaAgents(instanceID);
+
+            if (IsObjectNull(SelectedInstance_AlphaAgentsData)) return;
+            AlphaAgentIDs = GetAgentIDsFromAgentList(SelectedInstance_AlphaAgentsData);
+
+            StateHasChanged();
+        }
+
+        /// <summary>
+        /// Get Request via API - Get agents with relation to the given generation(ID)
+        /// </summary>
+        /// <param name="generationID">ID of the Generation relation</param>
+        public async void GetAgentData(string generationID)
+        {
+            if (IsStringNullOrEmpty(generationID)) return;
+            SelectedGeneration_AgentData = await ApiHandler.API_GetAgentData(generationId: generationID, instanceId: SelectedInstanceID);
+
+            if (IsObjectNull(SelectedGeneration_AgentData)) return;
+            AgentIDs = GetAgentIDsFromAgentList(SelectedGeneration_AgentData);
+            StateHasChanged();
+        }
+
+        /// <summary>
+        /// Get Requets - Get the ID's of all Generations relating to a instance(ID)
+        /// </summary>
+        /// <param name="instanceID">ID of the Instance relation</param>
+        public async Task GetGenerationIDs(string instanceID)
+        {
+            if (IsStringNullOrEmpty(instanceID)) return;
+            GenereationIDs = await ApiHandler.API_GetGenerationIDs(instanceID);
+            StateHasChanged();
+        }
+
         /// <summary>
         /// Get the ID attribute for each agent in a list
         /// </summary>
@@ -71,7 +132,7 @@ namespace MLApplication_frontend.Pages.GenerationalLearningPages
         /// <param name="newAgentId">New Value</param>
         public void UpdateCurrentlySelectedAgent(string newAgentId)
         {
-            if (IsStringNull(newAgentId)) return;
+            if (IsStringNullOrEmpty(newAgentId)) return;
             var ConcatAgentData = SelectedInstance_AlphaAgentsData.Concat(SelectedGeneration_AgentData);
             CurrentlySelectedAgent = ConcatAgentData.First(obj => obj.agentID == newAgentId);
         }
@@ -83,60 +144,20 @@ namespace MLApplication_frontend.Pages.GenerationalLearningPages
         /// <PlotInstanceEnvironment()> Call to plot the Instance Data</>
         public async Task GetInstanceData(string instanceID)
         {
-            if (IsStringNull(instanceID)) return;
-            (CurrentInstanceData, CurrentEnvironmentData) = await apiHandler.API_GetInstanceData(instanceID);
+            if (IsStringNullOrEmpty(instanceID)) return;
+            (CurrentInstanceData, CurrentEnvironmentData) = await ApiHandler.API_GetInstanceData(instanceID);
             PlotInstanceEnvironment();
         }
 
-        /// <summary>
-        /// Get Request via API - Get alphe agents with relation to the given instance(ID)
-        /// </summary>
-        /// <param name="instanceID">ID of the Instance AlphaAgents share a relation to</param>
-        public async void GetAlphaAgents(string instanceID)
-        {
-            if (IsStringNull(instanceID)) return;
-            SelectedInstance_AlphaAgentsData = await apiHandler.API_AlphaAgents(instanceID);
-
-            if (IsObjectNull(SelectedInstance_AlphaAgentsData)) return;
-            AlphaAgentIDs = GetAgentIDsFromAgentList(SelectedInstance_AlphaAgentsData);
-
-            StateHasChanged();
-        }
-
-        /// <summary>
-        /// Get Request via API - Get agents with relation to the given generation(ID)
-        /// </summary>
-        /// <param name="generationID">ID of the Generation relation</param>
-        public async void GetAgentData(string generationID)
-        {
-            if (IsStringNull(generationID)) return;
-            SelectedGeneration_AgentData = await apiHandler.API_GetAgentData(generationId: generationID, instanceId: SelectedInstanceID);
-
-            if (IsObjectNull(SelectedGeneration_AgentData)) return;
-            AgentIDs = GetAgentIDsFromAgentList(SelectedGeneration_AgentData);
-            StateHasChanged();
-        }
-
-        /// <summary>
-        /// Get Requets - Get the ID's of all Generations relating to a instance(ID)
-        /// </summary>
-        /// <param name="instanceID">ID of the Instance relation</param>
-        public async void GetGenerationIDs(string instanceID)
-        {
-            if (IsStringNull(instanceID)) return;
-            GenereationIDs = await apiHandler.API_GetGenerationIDs(instanceID);
-            StateHasChanged();
-        }
-
-
+        
         /// <summary>
         /// Get Requets - Get the data of a generation
         /// </summary>
         /// <param name="generationID">ID of a generation</param>
-        public async void GetGenerationData(string generationID)
+        public async Task GetGenerationData(string generationID)
         {
-            if (IsStringNull(generationID)) return;
-            SelectedGeneration_GenerationData = await apiHandler.API_GetGenerationData(generationId: generationID, instanceId: SelectedInstanceID);
+            if (IsStringNullOrEmpty(generationID)) return;
+            SelectedGeneration_GenerationData = await ApiHandler.API_GetGenerationData(generationId: generationID, instanceId: SelectedInstanceID);
             StateHasChanged();
         }
 
@@ -177,7 +198,7 @@ namespace MLApplication_frontend.Pages.GenerationalLearningPages
         /// <summary>
         /// Helper functions for null checks
         /// </summary>
-        private bool IsStringNull(string value) => string.IsNullOrWhiteSpace(value);
+        private bool IsStringNullOrEmpty(string value) => string.IsNullOrWhiteSpace(value);
         private bool IsObjectNull(object? obj) => obj == null;
 
 
@@ -187,9 +208,13 @@ namespace MLApplication_frontend.Pages.GenerationalLearningPages
         string InsatnceInformationVisibleStyle => isInstanceInformationVisible ? "" : "display: none;";
         void ToggleInstanceInformationVisibility() => isInstanceInformationVisible = !isInstanceInformationVisible;
 
-
-
-        public ResultsPage() {
+        /// <summary>
+        /// Init panel content
+        /// - Builds each panel as a PanelContent_Class
+        /// - Stores in List -> PanelContent
+        /// </summary>
+        public void InitalizePanelConent()
+        {
             PanelContent_Header = builder =>
             {
                 builder.OpenComponent(0, typeof(InstanceSelection));
@@ -235,28 +260,5 @@ namespace MLApplication_frontend.Pages.GenerationalLearningPages
                 })
             };
         }
-
-        protected override async Task OnInitializedAsync()
-        {
-            List<string>? ReturnedIds = await apiHandler.API_GetAllInstanceIDs();
-
-            if (ReturnedIds != null)
-            {
-                InstanceIDS = ReturnedIds;
-                InstanceIDS.Insert(0, "");
-                StateHasChanged();
-            }
-        }
-
-        protected override async void OnAfterRender(bool firstRender)
-        {
-            if (firstRender)
-            {
-                GraphPlottingFunctions = new(jsRuntime: JSRuntime);
-                await GraphPlottingFunctions.PlotEnvironmentGraph();
-            }
-        }
     }
-
-
 }

@@ -4,7 +4,7 @@
 @using MLApplication_frontend.Components.Environment
 @using MLApplication_frontend.Layout
 @using MLApplication_frontend.Components.SideContentPanel
-@inject InstanceAttributeStateContainer stateContainer
+@inject Services.InstanceAttributeStateContainer stateContainer
 
 
 <GenerationalLearning_ApplicationLayout >
@@ -20,8 +20,8 @@
 
     <Content_Main>
         <CascadingValue name="NodeTypeSelectionValue_cascade" Value="@NodeTypeSelectionValue">
-            <CascadingValue name="CurrentEnvironmentDimension_X" Value="@CurrentEnvironemntDimension_X">
-                <CascadingValue name="CurrentEnvironmentDimension_Y" Value="@CurrentEnvironemntDimension_Y">
+            <CascadingValue name="CurrentEnvironmentDimension_X" Value="@CurrentEnvironmentDimension_X">
+                <CascadingValue name="CurrentEnvironmentDimension_Y" Value="@CurrentEnvironmentDimension_Y">
                     <ConstructedEnvironment />
                 </CascadingValue>
             </CascadingValue>
